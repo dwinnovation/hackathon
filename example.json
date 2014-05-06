@@ -41,6 +41,6 @@ var data = {
 		taxes : 5,
 		profit : 50,
 		marketing : 25 
-	},
+	}
 
 };
