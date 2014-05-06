@@ -32,7 +32,7 @@ function coinDropped(coin, bucket) {
 
 	var bucketValue = $(bucket).data('guessed');
 
-	if (typeof bucketValue == 'undefined' || bucketValue == '')
+	if (typeof bucketValue === 'undefined' || bucketValue === '')
 		bucketValue = 0;
 
 	// add coin to bucket:
@@ -76,6 +76,18 @@ interact('.dropzone')
     })
     .on('drop', function (event) {
         event.relatedTarget.textContent = 'Dropped';
+var targetElement = event.target;
+var bucket = $(targetElement).find('.bucket');
+
+var coinElement = event.relatedTarget;
+var coin = $(coinElement);
+
+
+coinDropped(coin, bucket);
+console.log(coin);
+console.log(bucket);
+
+
     });
 
 interact('.drag-drop')
