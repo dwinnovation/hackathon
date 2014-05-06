@@ -30,16 +30,24 @@ body {
     left: 40px;
     position: relative;
 }
-.buckets.guessing span.guessed {
+#buckets.guessing span.guessed {
+	text-align: center;
+	font-size: 2em;
 	display: block;
 }
-.buckets.guessing span.correct {
+#buckets.guessing span.correct {
+	text-align: center;
+	font-size: 2em;
 	display: none;
 }
-.buckets.solution span.guessed {
+#buckets.solution span.guessed {
+	text-align: center;
+	font-size: 2em;
 	display: none;
 }
-.buckets.solution span.correct {
+#buckets.solution span.correct {
+	text-align: center;
+	font-size: 2em;
 	display: block;
 }
 
