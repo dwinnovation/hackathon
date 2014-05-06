@@ -26,6 +26,10 @@ body {
        background-color: #FFFFFF;
 }
 
+#title{
+    left: 40px;
+    position: relative;
+}
 .buckets.guessing span.guessed {
 	display: block;
 }
