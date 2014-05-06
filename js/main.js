@@ -77,7 +77,7 @@ function coinDropped(coinValue, bucket) {
     totalVal += coinValue;
     $('.total .distributed').text(totalVal);
 
-       var node = document.getElementById(".newClass").cloneNode(true);
+       var node = document.getElementById("coin_1").cloneNode(true);
             $('#buckets').prepend(node);
 
 
@@ -159,7 +159,7 @@ interact('.dropzone')
         // enable draggables to be dropped into this
         .dropzone(true)
         // only accept elements matching this CSS selector
-        .accept('.newClass')
+        .accept('#coin_1')
         // listen for drop related events
         .on('dragenter', function(event) {
             var draggableElement = event.relatedTarget,
