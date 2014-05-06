@@ -161,8 +161,6 @@ interact('.dropzone')
 
             coinDropped(coin, bucket);
 
-            var node = document.getElementById("yes-drop").cloneNode(true);
-            $('#buckets').prepend(node);
 
         });
 
