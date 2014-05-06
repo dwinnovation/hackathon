@@ -2,7 +2,10 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-     body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+#logo{
+    background: url("../cssi/dwlogo-all.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
