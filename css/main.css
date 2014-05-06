@@ -2,7 +2,7 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+/* @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300); */
 
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -77,6 +77,9 @@ h2 {
 	display: block;
 	margin-bottom: 10px;
 	text-align: center;
+}
+#coinStack {
+	
 }
 
 #outer-dropzone {

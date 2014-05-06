@@ -116,14 +116,48 @@ $(document).ready(function() {
 		console.log("custom");
 	});
 
-	// showCoinModal();
+	$('#coinStack img').on('dragstart', function(e) {
+		console.log("dragstart");
+		
+		var dt = e.originalEvent.dataTransfer;
 
+		// dt.setDragImage(coinImg, 0, 0);
+		return true;
+	});
+	
+	$('#buckets .dropzone').each(function(){
+		$(this).on('dragenter', function(e){
+			console.log("dragenter");
+			e.originalEvent.stopPropagation();
+
+			// See the section on the DataTransfer object.
+	    	return true;
+		});
+		$(this).on('dragover', function(e){
+			console.log("dragover");
+			// e.originalEvent.stopPropagation();
+
+			return false;
+		});
+		$(this).on('drop', function(e){
+			console.log("drop");
+		    e.originalEvent.stopPropagation();
+
+			// See the section on the DataTransfer object.
+	    	return false;			
+		});
+		// $(this).on('dragend', function(){
+		// 	console.log("dragend");
+		// });
+	});
+	
 	// check button handler: do scoring, display results:
 	$('#checkBtn').on('click',function(){
 		score();
 	});
 });
 
+/*
 interact('.dropzone')
 // enable draggables to be dropped into this
 .dropzone(true)
@@ -148,13 +182,13 @@ interact('.dropzone')
     var bucket = $(targetElement).find('.bucket');
 	showCoinModal(bucket);
 });
-
+*/
 
 	// check button handler: do scoring, display results:
     $('#checkBtn').on('click', function() {
         score();
     });
-
+/*
 interact('.dropzone')
         // enable draggables to be dropped into this
         .dropzone(true)
@@ -199,7 +233,7 @@ interact('.drag-drop')
         })
         .inertia(true)
         .restrict({drag: 'parent'});
-
+*/
 //Flippy
 
 $("#checkBtn").click(function() {
