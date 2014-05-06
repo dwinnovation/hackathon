@@ -71,12 +71,18 @@
                     <a target="_self" href="http://www.dw.de">
                         <img title="Deutsche Welle" alt="Deutsche Welle" src="img/dw_logo_relaunch.png">
                     </a>
+                    <a target="_self" href="http://www.br.de">
+                    	<img title="Bayerischer Rundfunk" alt="Deutsche Welle" src="http://www.br.de/static/img/logo/logo_home.png">
+                    </a>
+                    <a target="_blank" href="http://www.ndr.de">
+                    	<img title="Norddeutscher Rundfunk" alt="Norddeutscher Rundfunk" src="img/NDR-Logo.jpg">
+                    </a>
                 </div>
                 <div id="title"><h1>iPay/iPaid</h1></div>
             </div>
             <!-- Example row of columns -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
 
                 </div>
                 <div class="col-md-6">
@@ -88,32 +94,32 @@
                 <div class="col-md-12 drag-drop newClass" data-value="1">
                     <img src="img/coin.png"  alt="Muenzen">
                 </div>
-                <div class="col-md-2 dropzone">
+                <div class="dropzone col-md-2" id="wages-bucket">
                     <img src="img/bucket.png"  alt="handy" class="bucket wages" data-guessed="" data-correct="35">
                     <span class="guessed"></span>
                     <span class="correct"></span>
                 </div>
-                <div class="col-md-2 dropzone">
+                <div class="col-md-2 dropzone" id="materials-bucket">
                     <img src="img/bucket.png"  alt="handy" class="bucket materials" data-guessed="" data-correct="15">
                     <span class="guessed"></span>
                     <span class="correct"></span>
                 </div>
-                <div class="col-md-2 dropzone">
+                <div class="col-md-2 dropzone" id="logistics-bucket">
                     <img src="img/bucket.png"  alt="handy" class="bucket logistics" data-guessed="" data-correct="40">
                     <span class="guessed"></span>
                     <span class="correct"></span>
                 </div>
-                <div class="col-md-2 dropzone">
+                <div class="col-md-2 dropzone" id="taxes-bucket">
                     <img src="img/bucket.png"  alt="handy" class="bucket taxes" data-guessed="" data-correct="5">
                     <span class="guessed"></span>
                     <span class="correct"></span>
                 </div>
-                <div class="col-md-2 dropzone">
+                <div class="col-md-2 dropzone" id="profit-bucket">
                     <img src="img/bucket.png"  alt="handy" class="bucket profit" data-guessed="" data-correct="5">
                     <span class="guessed"></span>
                     <span class="correct"></span>
                 </div>
-                <div class="col-md-2 dropzone">
+                <div class="col-md-2 dropzone" id="marketing-bucket">
                     <img src="img/bucket.png"  alt="handy" class="bucket marketing" data-guessed="" data-correct="0">
                     <span class="guessed"></span>
                     <span class="correct"></span>
@@ -121,16 +127,16 @@
             </div>
 
 			<div class="row total">
-				<div class="col-md-12">
-					<span class="distributed">0</span> / <span class="hundred">100</span>
+				<div class="col-md-10">
+					<div class="pull-right">
+						<span class="lead">Verteilt: <span class="distributed">0</span> / <span class="hundred">100</span></span>
+					</div>
+				</div>
+				<div class="col-md-2">
+                   	<button id="checkBtn" class="btn btn-primary btn-lg" disabled>Check</button>
 				</div>
 			</div>
 
-            <hr>
-
-            <div class="row">
-                <div class="col-md-2 col-md-offset-10">
-                    <button id="checkBtn" class="btn btn-primary btn-lg">Check</button>
                 </div>
             </div>
 
@@ -143,6 +149,7 @@
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/raphael-2.1.2-min.js"></script>
         <script src="js/vendor/interact.min.js"></script>
+        <script src="js/vendor/jquery.flippy.js"></script>
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
