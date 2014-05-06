@@ -63,6 +63,8 @@ function coinDropped(coinValue, bucket) {
             $('#buckets').prepend(node);
 	var bucketValue = $(bucket).data('guessed');
 
+	console.log(coinValue);
+
     if (typeof bucketValue === 'undefined' || bucketValue === '')
         bucketValue = 0;
 
@@ -100,7 +102,7 @@ $(document).ready(function() {
 	// check button handler: do scoring, display results:
 	$('#checkBtn').on('click',function(){
 		score();
-	})
+	});
 });
 
 interact('.dropzone')
@@ -132,7 +134,7 @@ interact('.dropzone')
 	// check button handler: do scoring, display results:
     $('#checkBtn').on('click', function() {
         score();
-    })
+    });
 
 interact('.dropzone')
         // enable draggables to be dropped into this
@@ -158,7 +160,12 @@ interact('.dropzone')
             var coinElement = event.relatedTarget;
             var coin = $(coinElement);
 
+
             coinDropped(coin, bucket);
+
+            var node = document.getElementById("yes-drop").cloneNode(true);
+            $('#buckets').prepend(node);
+
         });
 
 interact('.drag-drop')
