@@ -2,10 +2,13 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
 body {
+	font-family: 'Open Sans', sans-serif;
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #F5F4F2;
+/*    background-color: #F5F4F2; */
     color: #3E3E3E;
 }
 
@@ -27,9 +30,28 @@ body {
 }
 
 #title{
-    left: 40px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:300;
+    margin:30px 0 50px 0;
     position: relative;
+    text-align:center;
 }
+
+h1 {
+	font-weight:300;
+	letter-spacing:10px;
+	font-size:60px;
+	padding:0;
+	position:relative;
+}
+
+h2 {
+	font-weight:300;
+/*	letter-spacing:1px; */
+	font-size:35px;
+	color:#ccc;
+}
+
 #buckets.guessing span.guessed {
 	text-align: center;
 	font-size: 2em;
@@ -103,17 +125,4 @@ body {
 .total {
 	padding: 20px 0;
 	font-size: 2em;
-}
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
-
-h1 {
-	font-family: 'Open Sans', sans-serif;
-	font-weight:300;
-	letter-spacing:5px;
-	font-size:35px;
-	text-align:center;
-	padding:0;
-	left:-40px;
-	position:relative;
 }
