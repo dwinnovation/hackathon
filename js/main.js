@@ -1,4 +1,35 @@
 /**
+ * show modal dialog for coin values
+ * @param bucket
+ *     the bucket object the coin was dropped on
+ */
+function showCoinModal(bucket) {
+	// save bucket object so we can use it later
+	$('#coinModal').data('bucket', bucket);
+	// show dialog
+	$('#coinModal').modal();
+}
+
+/**
+ * hide the modal coin value dialog after an option has been selected.
+ * @param value
+ *     the selected value or null
+ */
+function hideCoinModal(value) {
+	if (value === null || value == 0) {
+		// nothing
+	} else {
+		var bucket = $('#coinModal').data('bucket');
+		console.log(bucket);
+
+		// drop coin into the bucket
+		coinDropped(value, bucket);
+	}
+
+	$('#coinModal').modal('hide');
+}
+
+/**
  * input:
  *   guessed: array of number
  *   correct: array of number
@@ -27,9 +58,7 @@ function score() {
 	console.log(result);
 }
 
-function coinDropped(coin, bucket) {
-	var coinValue = $(coin).data('value');
-
+function coinDropped(coinValue, bucket) {
 	var bucketValue = $(bucket).data('guessed');
 
 	if (typeof bucketValue === 'undefined' || bucketValue === '')
@@ -47,6 +76,25 @@ function coinDropped(coin, bucket) {
  * this code runs when page finished loading:
  */
 $(document).ready(function() {
+	// init modal dialog:
+	
+	// onclick handlers for value panels:
+	$('#coinModal .valuePanel').each(
+		function(index,item) {
+			$(item).on('click',function(){
+				var coinValue = $(item).data('value');
+				console.log(coinValue);
+				hideCoinModal(coinValue)
+			});
+		}
+	);
+	
+	$('#coinModal .valuePanelCustom').on('click', function(){
+		console.log("custom");
+	});
+
+	// showCoinModal();
+	
 	// check button handler: do scoring, display results:
 	$('#checkBtn').on('click',function(){
 		score();
@@ -83,10 +131,7 @@ var coinElement = event.relatedTarget;
 var coin = $(coinElement);
 
 
-coinDropped(coin, bucket);
-console.log(coin);
-console.log(bucket);
-
+		showCoinModal(bucket);
 
     });
 
