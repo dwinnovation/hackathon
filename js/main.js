@@ -196,3 +196,91 @@ interact('.drag-drop')
         })
         .inertia(true)
         .restrict({drag: 'parent'});
+        
+//Flippy
+
+$("#checkBtn").click(function() {
+
+	$("#wages-bucket").flippy({
+    	direction:"RIGHT",
+	    duration: "500",
+	    depth:0,
+	    verso:"<img src='img/coin.jpg' />",
+		recto:"Hier steht noch mehr Zeug"
+ 	});
+ 	
+ 	$("#wages-bucket").hover(function(){
+ 		$(this).flippyReverse();
+ 	});
+ 	 	
+ 	setTimeout(function(){
+ 		$("#materials-bucket").flippy({
+    	direction:"RIGHT",
+	    duration: "500",
+	    depth:0,
+	    verso:"<img src='img/coin.jpg' />",
+		recto:"Hier steht noch mehr Zeug"
+	 	});
+	 }, 1500);
+	 
+	$("#materials-bucket").hover(function(){
+ 		$(this).flippyReverse();
+ 	});
+	 
+	  	setTimeout(function(){
+ 		$("#logistics-bucket").flippy({
+    	direction:"RIGHT",
+	    duration: "500",
+	    depth:0,
+	    verso:"<img src='img/coin.jpg' />",
+		recto:"Hier steht noch mehr Zeug"
+	 	});
+	 }, 2500);
+	 
+	$("#logistics-bucket").hover(function(){
+ 		$(this).flippyReverse();
+ 	});
+	 
+	  	setTimeout(function(){
+ 		$("#taxes-bucket").flippy({
+    	direction:"RIGHT",
+	    duration: "500",
+	    depth:0,
+	    verso:"<img src='img/coin.jpg' />",
+		recto:"Hier steht noch mehr Zeug"
+	 	});
+	 }, 3500);
+	 
+	$("#taxes-bucket").hover(function(){
+ 		$(this).flippyReverse();
+ 	});
+	 
+	  	setTimeout(function(){
+ 		$("#profit-bucket").flippy({
+    	direction:"RIGHT",
+	    duration: "500",
+	    depth:0,
+	    verso:"<img src='img/coin.jpg' />",
+		recto:"Hier steht noch mehr Zeug"
+	 	});
+	 }, 4500);
+	 
+	$("#profit-bucket").hover(function(){
+ 		$(this).flippyReverse();
+ 	});
+	 
+	  	setTimeout(function(){
+ 		$("#marketing-bucket").flippy({
+    	direction:"RIGHT",
+	    duration: "500",
+	    depth:0,
+	    verso:"<img src='img/coin.jpg' />",
+		recto:"Hier steht noch mehr Zeug"
+	 	});
+	 }, 5500);
+	 
+	$("#marketing-bucket").hover(function(){
+ 		$(this).flippyReverse();
+ 	});
+ 
+ });
