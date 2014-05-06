@@ -90,6 +90,15 @@ $(document).ready(function() {
 			});
 		}
 	);
+	
+	$('#coinModal .valueCustomPanel .btn').on('click',function(){
+		var coinValue = $('#coinModal .valueCustomPanel input').val();
+		if (typeof coinValue === 'undefined' || coinValue === '') {
+			hideCoinModal(null);
+		} else {
+			hideCoinModal(parseInt(coinValue));
+		}
+	});
 
 	$('#coinModal .valuePanelCustom').on('click', function(){
 		console.log("custom");
