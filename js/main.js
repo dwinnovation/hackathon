@@ -159,7 +159,7 @@ interact('.dropzone')
             var coin = $(coinElement);
 
 
-            coinDropped(coin, bucket);
+          //  coinDropped(coin, bucket);
 
 
         });
