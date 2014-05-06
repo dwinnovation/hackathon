@@ -5,7 +5,23 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #F5F4F2;
+    color: #3E3E3E;
 }
-#logo{
-    background: url("../cssi/dwlogo-all.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+
+.navbar{
+     background-color: #FFFFFF;
+    bottom: 30px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#headerLogo {
+    left: 10px;
+    position: relative;
+}
+
+h1{
+
 }
