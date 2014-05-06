@@ -57,8 +57,7 @@ function score() {
 }
 
 function coinDropped(coinValue, bucket) {
-   /*   var node = document.getElementById("yes-drop").cloneNode(true);
-            $('#buckets').prepend(node);*/
+
 	var bucketValue = $(bucket).data('guessed');
 
 	console.log(coinValue);
@@ -72,13 +71,15 @@ function coinDropped(coinValue, bucket) {
     // update bucket and display:
     $(bucket).data('guessed', bucketValue);
     $(bucket).siblings('.guessed').text(bucketValue);
-    
+
     // update sum:
     var totalVal = parseInt($('.total .distributed').text());
     totalVal += coinValue;
     $('.total .distributed').text(totalVal);
-    
-    
+
+       var node = document.getElementById(".newClass").cloneNode(true);
+            $('#buckets').prepend(node);
+
 }
 
 /**
@@ -97,7 +98,7 @@ $(document).ready(function() {
 			});
 		}
 	);
-	
+
 	$('#coinModal .valueCustomPanel .btn').on('click',function(){
 		var coinValue = $('#coinModal .valueCustomPanel input').val();
 		if (typeof coinValue === 'undefined' || coinValue === '') {
@@ -123,7 +124,7 @@ interact('.dropzone')
 // enable draggables to be dropped into this
 .dropzone(true)
 // only accept elements matching this CSS selector
-.accept('#yes-drop')
+.accept('#drag-drop')
 // listen for drop related events
 .on('dragenter', function(event) {
     var draggableElement = event.relatedTarget,
@@ -154,7 +155,7 @@ interact('.dropzone')
         // enable draggables to be dropped into this
         .dropzone(true)
         // only accept elements matching this CSS selector
-        .accept('#yes-drop')
+        .accept('.newClass')
         // listen for drop related events
         .on('dragenter', function(event) {
             var draggableElement = event.relatedTarget,
