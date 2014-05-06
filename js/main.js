@@ -12,3 +12,18 @@ function averageDeviation(guessed, correct) {
 	}
 	return sum / guessed.length;
 }
+
+function score() {
+	var guessed = [], correct = [];
+	$('#buckets').find('.bucket').each(
+		function(index, item) {
+			var bucket = $(item);
+			guessed.push(bucket.data('guessed'));
+			correct.push(bucket.data('correct'));
+		});
+	
+	var result = averageDeviation(guessed, correct);
+	
+	console.log(result);
+}
+
