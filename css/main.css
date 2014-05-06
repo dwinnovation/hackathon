@@ -59,7 +59,7 @@ body {
 }
 
 .drop-target {
-    background-color: #29e;
+    background-color: red;
 }
 
 .drag-drop {
@@ -69,5 +69,5 @@ body {
 }
 
 .can-drop {
-    background-color: #4e4;
+    
 }

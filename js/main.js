@@ -66,25 +66,20 @@ interact('.dropzone')
             // feedback the possibility of a drop
             dropzoneElement.classList.add('drop-target');
             draggableElement.classList.add('can-drop');
-            draggableElement.textContent = 'Dragged in';
         })
         .on('dragleave', function(event) {
             // remove the drop feedback style
             event.target.classList.remove('drop-target');
             event.relatedTarget.classList.remove('can-drop');
-            event.relatedTarget.textContent = 'Dragged out';
         })
         .on('drop', function(event) {
-            event.relatedTarget.textContent = 'Dropped';
             var targetElement = event.target;
             var bucket = $(targetElement).find('.bucket');
             var coinElement = event.relatedTarget;
             var coin = $(coinElement);
+            var node = document.getElementById("yes-drop").cloneNode(true);
+            $('#buckets').prepend(node);
             coinDropped(coin, bucket);
-            console.log(coin);
-            console.log(bucket);
-
-
         });
 
 interact('.drag-drop')
