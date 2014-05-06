@@ -27,3 +27,12 @@ function score() {
 	console.log(result);
 }
 
+/**
+ * this code runs when page finished loading:
+ */
+$(document).ready(function() {
+	// check button handler: do scoring, display results:
+	$('#checkBtn').on('click',function(){
+		score();
+	})
+});
