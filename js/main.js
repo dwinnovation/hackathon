@@ -21,23 +21,23 @@ function score() {
 			guessed.push(bucket.data('guessed'));
 			correct.push(bucket.data('correct'));
 		});
-	
+
 	var result = averageDeviation(guessed, correct);
-	
+
 	console.log(result);
 }
 
 function coinDropped(coin, bucket) {
 	var coinValue = $(coin).data('value');
-	
+
 	var bucketValue = $(bucket).data('guessed');
-	
+
 	if (typeof bucketValue == 'undefined')
 		bucketValue = 0;
-	
+
 	// add coin to bucket:
 	bucketValue += coinValue;
-	
+
 	// update bucket and display:
 	$(bucket).data('guessed', bucketValue);
 	$(bucket).siblings('.guessed').text(bucketValue);
@@ -52,3 +52,43 @@ $(document).ready(function() {
 		score();
 	})
 });
+
+interact('.dropzone')
+    // enable draggables to be dropped into this
+    .dropzone(true)
+    // only accept elements matching this CSS selector
+    .accept('#yes-drop')
+    // listen for drop related events
+    .on('dragenter', function (event) {
+        var draggableElement = event.relatedTarget,
+            dropzoneElement = event.target;
+
+        // feedback the possibility of a drop
+        dropzoneElement.classList.add('drop-target');
+        draggableElement.classList.add('can-drop');
+        draggableElement.textContent = 'Dragged in';
+    })
+    .on('dragleave', function (event) {
+        // remove the drop feedback style
+        event.target.classList.remove('drop-target');
+        event.relatedTarget.classList.remove('can-drop');
+        event.relatedTarget.textContent = 'Dragged out';
+    })
+    .on('drop', function (event) {
+        event.relatedTarget.textContent = 'Dropped';
+    });
+
+interact('.drag-drop')
+    .draggable({
+        onmove: function (event) {
+            var target = event.target;
+
+            target.x = (target.x|0) + event.dx;
+            target.y = (target.y|0) + event.dy;
+
+            target.style.webkitTransform = target.style.transform =
+                'translate(' + target.x + 'px, ' + target.y + 'px)';
+        }
+    })
+    .inertia(true)
+    .restrict({ drag: 'parent' });
