@@ -78,6 +78,8 @@ function coinDropped(coinValue, bucket) {
     totalVal += coinValue;
     $('.total .distributed').text(totalVal);
     
+    if (totalVal === 100)
+    	$('#checkBtn').removeAttr('disabled');
     
 }
 
