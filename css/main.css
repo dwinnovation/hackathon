@@ -67,7 +67,7 @@ body {
 }
 
 .drop-target {
-    background-color: red;
+    background-color: #aaa;
 }
 
 .drag-drop {
@@ -77,7 +77,7 @@ body {
 }
 
 .can-drop {
-    
+
 }
 
 #coinModal .valuePanel,.valueCustomPanel {
