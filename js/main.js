@@ -77,13 +77,21 @@ function coinDropped(coinValue, bucket) {
     totalVal += coinValue;
     $('.total .distributed').text(totalVal);
 
-       var node = document.getElementById("coin_1").cloneNode(true);
-            $('#buckets').prepend(node);
-
-
+    // enable "check" button when 100 coins have been distributed:
     if (totalVal === 100)
     	$('#checkBtn').removeAttr('disabled');
+}
 
+function dragCoin(coinItem, event) {
+	console.log("dragCoin");
+}
+
+function dropCoin(bucketItem, event) {
+	// show dialog for selecting coin value:
+	showCoinModal(bucketItem);
+
+	// tell browser that we are handled this event:
+	event.preventDefault();
 }
 
 /**
@@ -116,124 +124,12 @@ $(document).ready(function() {
 		console.log("custom");
 	});
 
-	$('#coinStack img').on('dragstart', function(e) {
-		console.log("dragstart");
-		
-		var dt = e.originalEvent.dataTransfer;
-
-		// dt.setDragImage(coinImg, 0, 0);
-		return true;
-	});
-	
-	$('#buckets .dropzone').each(function(){
-		$(this).on('dragenter', function(e){
-			console.log("dragenter");
-			e.originalEvent.stopPropagation();
-
-			// See the section on the DataTransfer object.
-	    	return true;
-		});
-		$(this).on('dragover', function(e){
-			console.log("dragover");
-			// e.originalEvent.stopPropagation();
-
-			return false;
-		});
-		$(this).on('drop', function(e){
-			console.log("drop");
-		    e.originalEvent.stopPropagation();
-
-			// See the section on the DataTransfer object.
-	    	return false;			
-		});
-		// $(this).on('dragend', function(){
-		// 	console.log("dragend");
-		// });
-	});
-	
 	// check button handler: do scoring, display results:
 	$('#checkBtn').on('click',function(){
 		score();
 	});
 });
 
-/*
-interact('.dropzone')
-// enable draggables to be dropped into this
-.dropzone(true)
-// only accept elements matching this CSS selector
-.accept('#drag-drop')
-// listen for drop related events
-.on('dragenter', function(event) {
-    var draggableElement = event.relatedTarget,
-            dropzoneElement = event.target;
-
-    // feedback the possibility of a drop
-    dropzoneElement.classList.add('drop-target');
-    draggableElement.classList.add('can-drop');
-})
-.on('dragleave', function(event) {
-    // remove the drop feedback style
-    event.target.classList.remove('drop-target');
-    event.relatedTarget.classList.remove('can-drop');
-})
-.on('drop', function(event) {
-    var targetElement = event.target;
-    var bucket = $(targetElement).find('.bucket');
-	showCoinModal(bucket);
-});
-*/
-
-	// check button handler: do scoring, display results:
-    $('#checkBtn').on('click', function() {
-        score();
-    });
-/*
-interact('.dropzone')
-        // enable draggables to be dropped into this
-        .dropzone(true)
-        // only accept elements matching this CSS selector
-        .accept('#coin_1')
-        // listen for drop related events
-        .on('dragenter', function(event) {
-            var draggableElement = event.relatedTarget,
-                    dropzoneElement = event.target;
-            // feedback the possibility of a drop
-            dropzoneElement.classList.add('drop-target');
-            draggableElement.classList.add('can-drop');
-        })
-        .on('dragleave', function(event) {
-            // remove the drop feedback style
-            event.target.classList.remove('drop-target');
-            event.relatedTarget.classList.remove('can-drop');
-        })
-        .on('drop', function(event) {
-            var targetElement = event.target;
-            var bucket = $(targetElement).find('.bucket');
-            var coinElement = event.relatedTarget;
-            var coin = $(coinElement);
-
-
-          //  coinDropped(coin, bucket);
-
-
-        });
-
-interact('.drag-drop')
-        .draggable({
-            onmove: function(event) {
-                var target = event.target;
-
-                target.x = (target.x | 0) + event.dx;
-                target.y = (target.y | 0) + event.dy;
-
-                target.style.webkitTransform = target.style.transform =
-                        'translate(' + target.x + 'px, ' + target.y + 'px)';
-            }
-        })
-        .inertia(true)
-        .restrict({drag: 'parent'});
-*/
 //Flippy
 
 $("#checkBtn").click(function() {
