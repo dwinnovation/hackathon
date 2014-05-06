@@ -72,6 +72,13 @@ function coinDropped(coinValue, bucket) {
     // update bucket and display:
     $(bucket).data('guessed', bucketValue);
     $(bucket).siblings('.guessed').text(bucketValue);
+    
+    // update sum:
+    var totalVal = parseInt($('.total .distributed').text());
+    totalVal += coinValue;
+    $('.total .distributed').text(totalVal);
+    
+    
 }
 
 /**

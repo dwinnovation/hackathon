@@ -93,3 +93,7 @@ body {
 #coinModal .valueCustomPanel input {
 
 }
+
+.total {
+	font-size: 2em;
+}
