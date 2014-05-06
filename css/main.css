@@ -25,3 +25,16 @@ body {
 .container{
        background-color: #FFFFFF;
 }
+
+.buckets.guessing span.guessed {
+	display: block;
+}
+.buckets.guessing span.correct {
+	display: none;
+}
+.buckets.solution span.guessed {
+	display: none;
+}
+.buckets.solution span.correct {
+	display: block;
+}
