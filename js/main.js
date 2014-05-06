@@ -57,8 +57,8 @@ function score() {
 }
 
 function coinDropped(coinValue, bucket) {
-      var node = document.getElementById("yes-drop").cloneNode(true);
-            $('#buckets').prepend(node);
+   /*   var node = document.getElementById("yes-drop").cloneNode(true);
+            $('#buckets').prepend(node);*/
 	var bucketValue = $(bucket).data('guessed');
 
 	console.log(coinValue);
