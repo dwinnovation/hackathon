@@ -20,8 +20,6 @@ function hideCoinModal(value) {
 		// nothing
 	} else {
 		var bucket = $('#coinModal').data('bucket');
-		console.log(bucket);
-
 		// drop coin into the bucket
 		coinDropped(value, bucket);
 	}
