@@ -61,6 +61,8 @@ function score() {
 function coinDropped(coinValue, bucket) {
 	var bucketValue = $(bucket).data('guessed');
 
+	console.log(coinValue);
+	
     if (typeof bucketValue === 'undefined' || bucketValue === '')
         bucketValue = 0;
 
@@ -161,7 +163,6 @@ interact('.dropzone')
             var coin = $(coinElement);
             var node = document.getElementById("yes-drop").cloneNode(true);
             $('#buckets').prepend(node);
-            coinDropped(coin, bucket);
         });
 
 interact('.drag-drop')
