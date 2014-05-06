@@ -42,3 +42,32 @@ body {
 .buckets.solution span.correct {
 	display: block;
 }
+
+#outer-dropzone {
+    height: 140px;
+}
+
+#inner-dropzone {
+    height: 80px;
+}
+
+.dropzone {
+    background-color: #ccc;
+    border: dashed 4px #666;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.drop-target {
+    background-color: #29e;
+}
+
+.drag-drop {
+    display: inline-block;
+   transition: background-color 0.3s;
+   z-index: 300;
+}
+
+.can-drop {
+    background-color: #4e4;
+}
