@@ -95,7 +95,7 @@ body {
 }
 
 .total {
-	font-size: 2em;
+	padding: 20px 0;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
