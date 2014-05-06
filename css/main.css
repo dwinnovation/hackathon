@@ -71,3 +71,12 @@ body {
 .can-drop {
     
 }
+
+#coinModal .valuePanel,.valueCustomPanel {
+	/* background-color: #ddd; */
+	padding: 15px;
+	text-align: center;
+	font-size: 2em;
+}
+#coinModal .valuePanel:hover,.valueCustomPanel:hover {
+	background-color: #ddd;
