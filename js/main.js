@@ -27,6 +27,22 @@ function score() {
 	console.log(result);
 }
 
+function coinDropped(coin, bucket) {
+	var coinValue = $(coin).data('value');
+	
+	var bucketValue = $(bucket).data('guessed');
+	
+	if (typeof bucketValue == 'undefined')
+		bucketValue = 0;
+	
+	// add coin to bucket:
+	bucketValue += coinValue;
+	
+	// update bucket and display:
+	$(bucket).data('guessed', bucketValue);
+	$(bucket).siblings('.guessed').text(bucketValue);
+}
+
 /**
  * this code runs when page finished loading:
  */
