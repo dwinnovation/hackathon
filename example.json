@@ -1,5 +1,5 @@
 var data = {
-	name : "iPhone",
+	name : "iPhone 5S",
 	imageUrl : "img/handy.jpg",
 	costs : {
 		wages : 12,
@@ -8,5 +8,39 @@ var data = {
 		taxes : 34,
 		profit : 56,
 		marketing : 78
-	}
+	},
+	{
+	name : "1l Benzin",
+	imageUrl : "img/benzin.jpg",
+	costs : {
+		wages : 1,
+		materials : 37,
+		logistics : 1.5,
+		taxes : 58.5,
+		profit : 1,
+		marketing :1 
+	},
+	{
+	name : "Roggenbrot",
+	imageUrl : "img/.jpg",
+	costs : {
+		wages : ,
+		materials : ,
+		logistics : ,
+		taxes : ,
+		profit : ,
+		marketing : 
+	},
+	{
+	name : "H&M T-Shirt",
+	imageUrl : "img/.jpg",
+	costs : {
+		wages : ,
+		materials : ,
+		logistics : ,
+		taxes : ,
+		profit : ,
+		marketing : 
+	},
+
 };
