@@ -32,7 +32,7 @@ function coinDropped(coin, bucket) {
 	
 	var bucketValue = $(bucket).data('guessed');
 	
-	if (typeof bucketValue == 'undefined')
+	if (typeof bucketValue == 'undefined' || bucketValue == '')
 		bucketValue = 0;
 	
 	// add coin to bucket:
