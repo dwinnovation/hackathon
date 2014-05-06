@@ -20,8 +20,6 @@ function hideCoinModal(value) {
 		// nothing
 	} else {
 		var bucket = $('#coinModal').data('bucket');
-		console.log(bucket);
-
 		// drop coin into the bucket
 		coinDropped(value, bucket);
 	}
@@ -61,8 +59,6 @@ function score() {
 function coinDropped(coinValue, bucket) {
 	var bucketValue = $(bucket).data('guessed');
 
-	console.log(coinValue);
-	
     if (typeof bucketValue === 'undefined' || bucketValue === '')
         bucketValue = 0;
 
