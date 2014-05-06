@@ -22,25 +22,25 @@ var data = {
 	},
 	{
 	name : "Roggenbrot",
-	imageUrl : "img/.jpg",
+	imageUrl : "img/roggenbrot.jpg",
 	costs : {
-		wages : ,
-		materials : ,
-		logistics : ,
-		taxes : ,
-		profit : ,
-		marketing : 
+		wages : 10,
+		materials : 20,
+		logistics : 10,
+		taxes : 6,
+		profit : 44,
+		marketing : 10 
 	},
 	{
 	name : "H&M T-Shirt",
-	imageUrl : "img/.jpg",
+	imageUrl : "img/tshirt.jpg",
 	costs : {
-		wages : ,
-		materials : ,
-		logistics : ,
-		taxes : ,
-		profit : ,
-		marketing : 
+		wages : 1,
+		materials : 13,
+		logistics : 6,
+		taxes : 5,
+		profit : 50,
+		marketing : 25 
 	},
 
 };
