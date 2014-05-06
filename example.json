@@ -1,0 +1,12 @@
+var data = {
+	name : "iPhone",
+	imageUrl : "img/handy.jpg",
+	costs : {
+		wages : 12,
+		materials : 34,
+		logistics : 12,
+		taxes : 34,
+		profit : 56,
+		marketing : 78
+	}
+};
