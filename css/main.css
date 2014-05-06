@@ -80,3 +80,8 @@ body {
 }
 #coinModal .valuePanel:hover,.valueCustomPanel:hover {
 	background-color: #ddd;
+}
+
+#coinModal .valueCustomPanel input {
+
+}
