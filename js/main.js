@@ -160,7 +160,7 @@ function initGame(productDescription) {
 
     // hide level navigator:
     $('#levelNavigator').addClass("hidden");
-	
+
 }
 
 /**
@@ -206,7 +206,7 @@ $(document).ready(function() {
     // check button handler: do scoring, display results:
     $('#checkBtn').on('click', function() {
         score();
-        
+
         // show level navigator:
         $('#levelNavigator').removeClass("hidden");
     });
@@ -228,6 +228,7 @@ $("#checkBtn").click(function() {
     for(var i=0; i<myBucketValue.length; i++){
         var guessedValue =  $("#" + myBucketValue[i] + "-bucket").data("guessed");
         var correctValue = productData[currentProductIndex].costs[myBucketValue[i]];
+        var textValue = productData[currentProductIndex].texts[myBucketValue[i]];
         console.log(guessedValue);
              console.log(correctValue);
 
@@ -236,7 +237,7 @@ $("#checkBtn").click(function() {
         duration: "500",
         depth: 0,
         verso: '<span class="lead headline">Lohn</span><div class="diagramm"><div class="diagramm-default red"><div style="height:' + (100-guessedValue) + '%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">'+guessedValue+'%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:' + (100-correctValue)+ '%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">'+correctValue+'%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
-        recto: '<span class="lead headline">Lohn</span>Hier steht noch mehr Zeug'
+        recto: '<span class="lead headline">Lohn</span>'+textValue+''
     });
 
     $("#"+myBucketValue[i]+"-bucket").hover(function() {
