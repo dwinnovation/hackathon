@@ -68,7 +68,7 @@ function coinDropped(coinValue, bucket) {
 
     // update bucket and display:
     $(bucket).data('guessed', bucketValue);
-    $(bucket).siblings('.guessed').text(bucketValue);
+    $(bucket).find('.guessed').text(bucketValue);
 
     // update sum:
     var totalVal = parseInt($('.total .distributed').text());
@@ -115,8 +115,8 @@ function initGame(productDescription) {
 
 	//	console.log(costBucket);
 
-		costBucket.find('img.bucket')
-			.data('correct', productDescription.costs[costKey])
+		costBucket
+            .data('correct', productDescription.costs[costKey])
 			.data('guessed', 0);
 
 		costBucket.find('.guessed').text( 0 );
@@ -147,7 +147,7 @@ function initGame(productDescription) {
 
 	//	console.log(costBucket);
 
-		costBucket.find('img.bucket')
+		costBucket
 			.data('correct', productDescription.costs[costKey])
 			.data('guessed', 0);
 
