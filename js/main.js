@@ -102,44 +102,12 @@ function dropCoin(bucketItem, event) {
  */
 function initGame(productDescription) {
 
-    // console.log(productDescription);
-
     // load product base data
     $('#productImage').attr('src', productDescription.imageUrl);
 
-    // TODO: use productDescription.name;
-
-    // load the costs, reset buckets:
-    for (costKey in productDescription.costs) {
-        var costBucket = $('#buckets [id$=' + costKey + '-bucket]');
-
-        //	console.log(costBucket);
-
-        costBucket
-                .data('correct', productDescription.costs[costKey])
-                .data('guessed', 0);
-
-        costBucket.find('.guessed').text(0);
-    }
-
-    // reset play status:
-    $('.total .distributed').text(0);
-    $('#checkBtn').prop('disabled', true);
-
-}
-
-/**
- * initialize the game by filling product data and resetting status
- * @param productDescription
- */
-function initGame(productDescription) {
-
-//	console.log(productDescription);
-
-    // load product base data
-    $('#productImage').attr('src', productDescription.imageUrl);
-
-    // TODO: use productDescription.name;
+    // set name and price:
+    $('#productInfoPanel').find('.productName').text(productDescription.name);
+    $('#productInfoPanel').find('.productPrice').text(productDescription.price);
 
     // load the costs, reset buckets:
     for (costKey in productDescription.costs) {
@@ -160,7 +128,6 @@ function initGame(productDescription) {
 
     // hide level navigator:
     $('#levelNavigator').addClass("hidden");
-
 }
 
 /**
