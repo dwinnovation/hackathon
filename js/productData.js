@@ -21,7 +21,7 @@
        }
     },
     {
-        name: "1l Benzin",
+        name: "1l petrol",
         imageUrl: "img/benzin.png",
         price: "1,54 €",
         costs: {
@@ -43,7 +43,7 @@
 
     },
     {
-        name: "Roggenbrot",
+        name: "rye bread",
         imageUrl: "img/brot.png",
         price: "2,52 €",
         costs: {
@@ -65,7 +65,7 @@
 
     },
     {
-        name: "H&M T-Shirt",
+        name: "t-shirt",
         imageUrl: "img/tshirt.png",
         price: "5,00 €",
         costs: {
