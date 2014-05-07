@@ -9,9 +9,9 @@ function showCoinModal(bucket) {
     // show dialog
     $('#coinModal').modal();
      var audioElement = document.createElement('audio');
-        audioElement.setAttribute('src', 'sound/sound.mp3');
+        audioElement.setAttribute('src', 'sounds/cash_register_x.wav');
 
-     audioElement.play().delay(500).stop();
+     audioElement.play();
 
 }
 
