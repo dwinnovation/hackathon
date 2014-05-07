@@ -60,8 +60,6 @@ function coinDropped(coinValue, bucket) {
 
 	var bucketValue = $(bucket).data('guessed');
 
-	console.log(coinValue);
-
     if (typeof bucketValue === 'undefined' || bucketValue === '')
         bucketValue = 0;
 
@@ -79,7 +77,7 @@ function coinDropped(coinValue, bucket) {
 
     // enable "check" button when 100 coins have been distributed:
     if (totalVal === 100)
-    	$('#checkBtn').removeAttr('disabled');
+    	$('#checkBtn').prop('disabled', false);
 }
 
 function dragCoin(coinItem, event) {
@@ -96,6 +94,38 @@ function dropCoin(bucketItem, event) {
 
 	// tell browser that we are handled this event:
 	event.preventDefault();
+}
+
+/**
+ * initialize the game by filling product data and resetting status
+ * @param productDescription
+ */
+function initGame(productDescription) {
+
+	console.log(productDescription);
+	
+	// load product base data
+	$('#productImage').attr('src', productDescription.imageUrl);
+
+	// TODO: use productDescription.name;
+	
+	// load the costs, reset buckets:
+	for (costKey in productDescription.costs) {
+		var costBucket = $('#buckets [id$='+costKey+'-bucket]');
+		
+		console.log(costBucket);
+		
+		costBucket.find('img.bucket')
+			.data('correct', productDescription.costs[costKey])
+			.data('guessed', 0);
+		
+		costBucket.find('.guessed').text( 0 );
+	}
+	
+	// reset play status:
+	$('.total .distributed').text(0);
+	$('#checkBtn').prop('disabled', true);
+	
 }
 
 /**
@@ -132,6 +162,9 @@ $(document).ready(function() {
 	$('#checkBtn').on('click',function(){
 		score();
 	});
+	
+	// initialize game with first product:
+	initGame(productData[0]);
 });
 
 //Flippy
