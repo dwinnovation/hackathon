@@ -53,7 +53,7 @@ function score() {
 
     var result = averageDeviation(guessed, correct);
 
-    console.log(result);
+   // console.log(result);
 }
 
 function coinDropped(coinValue, bucket) {
@@ -81,7 +81,7 @@ function coinDropped(coinValue, bucket) {
 }
 
 function dragCoin(coinItem, event) {
-    console.log("dragCoin");
+   // console.log("dragCoin");
 }
 
 function dropCoin(bucketItem, event) {
@@ -102,7 +102,7 @@ function dropCoin(bucketItem, event) {
  */
 function initGame(productDescription) {
 
-	console.log(productDescription);
+	// console.log(productDescription);
 
 	// load product base data
 	$('#productImage').attr('src', productDescription.imageUrl);
@@ -113,7 +113,7 @@ function initGame(productDescription) {
 	for (costKey in productDescription.costs) {
 		var costBucket = $('#buckets [id$='+costKey+'-bucket]');
 
-		console.log(costBucket);
+	//	console.log(costBucket);
 
 		costBucket.find('img.bucket')
 			.data('correct', productDescription.costs[costKey])
@@ -134,7 +134,7 @@ function initGame(productDescription) {
  */
 function initGame(productDescription) {
 
-	console.log(productDescription);
+//	console.log(productDescription);
 
 	// load product base data
 	$('#productImage').attr('src', productDescription.imageUrl);
@@ -145,7 +145,7 @@ function initGame(productDescription) {
 	for (costKey in productDescription.costs) {
 		var costBucket = $('#buckets [id$='+costKey+'-bucket]');
 
-		console.log(costBucket);
+	//	console.log(costBucket);
 
 		costBucket.find('img.bucket')
 			.data('correct', productDescription.costs[costKey])
@@ -178,7 +178,7 @@ $(document).ready(function() {
                        var totalValue = $('.distributed').text();
 
                     var currentTotal = parseInt(coinValue) + parseInt(totalValue);
-                     console.log(currentTotal);
+                //     console.log(currentTotal);
                     if(( currentTotal) <= 100){
                        hideCoinModal(coinValue);
                     }
@@ -212,7 +212,8 @@ $(document).ready(function() {
 //Flippy
 
 $("#checkBtn").click(function() {
-
+ var taxesGuessedValue = $(".bucket taxes").data("data-guessed");
+ console.log(taxesGuessedValue);
 	$("#wages-bucket").flippy({
     	direction:"RIGHT",
 	    duration: "500",
