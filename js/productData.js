@@ -33,12 +33,12 @@
             marketing: 1
         },
         texts: {
-            wages: "Rund ein Prozent des Benzinpreises geht an die Löhne.",
-            materials: "Die Rohstoffe kosten rund 37 Prozent des Benzinpreises.",
-            logistics: "Die Rohstoffe kosten rund 37 Prozent des Benzinpreises.",
-            taxes: "Die Rohstoffe kosten rund 37 Prozent des Benzinpreises.",
-            profit: "Die Rohstoffe kosten rund 37 Prozent des Benzinpreises.",
-            marketing: "Die Rohstoffe kosten rund 37 Prozent des Benzinpreises."
+            wages : "Hight prices? High wages? Not really, people working at gas stations don’t really make a million because they sell gasoline.",
+           materials : "Gas is getting short. The rising prices of gas at stock exchanges make it less lucrative to sell gas at the station.",
+           logistics : "Giant pipelines transport the \"black gold\" to the rafineries. However, many accidents happen and these pipelines are often used as a pressurizing medium within countries in conflicts."
+           taxes : "Environment taxes, taxes for gas, sales taxes - most of the price of gasoline is for taxes, no doubt about that.",
+           profit : "Filling stations do not get most of their profit thanks to the sell of gasoline. It is more profitable for them to sell goods for resale intheir own shop."
+           marketing : "Men working at gas stations can’t dictate the price of their gas. The prices of other filling stations are collected and then adapted."
         }
 
     },
@@ -55,12 +55,12 @@
             marketing: 10
         },
         texts: {
-            wages: "Rund 10 Prozent des Brotpreises gehen an die Löhne.",
-            materials: "Die Rohstoffe kosten etwa 20 Prozent des Gesamtpreises.",
-            logistics: "Der Transport beträgt schätzungsweise zehn Prozent des Gesamtpreises.",
-            taxes: "Der Transport beträgt schätzungsweise zehn Prozent des Gesamtpreises.",
-            profit: "Über 44 Prozent der Gesamtkosten gehen in den Gewinn über.",
-            marketing: "Über 44 Prozent der Gesamtkosten gehen in den Gewinn über."
+           wages : "Many bakeries have to fight for profit. More and more supermarkets integrate their own bakeries within their shop, so small family-driven bakeries don’t have a chance to survive.",
+           materials : "Less bakeries are actually producing their bread by themselve. They let other companies preproduce their products, so they can save time",
+           logistics : "Each day, tons of prezels, bread and bread rolls are transported across the country.",
+           taxes : "The consumer in Germany can be happy: For food taxes are lower than for other industrie products.",
+           profit : "Bakeries can dictate their prices for their product themselves. However, they depend on the prices of their competitors."
+           marketing : "Products like bread don’t need a lot of marketing, because it’s an everyday product."
         }
 
     },
@@ -77,12 +77,13 @@
             marketing: 25
         },
         texts: {
-            wages: "Rund acht Prozent des Preises eines iPhones gehen für die Fertigungskosten des Geräts drauf.",
-            materials: "Das Material eines iPhones beschlagnahmt rund 20 Prozent des Gesamtpreises.",
-            logistics: "Fünf Prozent der Kosten beträgt der Anteil für die Logistik.",
-            taxes: "Die Mehrwertsteuer in Deutschland beträgt 19 Prozent.",
-            profit: "Über 55 Prozent der Gesamtkosten eines iPhones gehen in den Gewinn über.",
-            marketing: "Die Marketingkosten machen bei einem iPhone etwa 0,5 Prozent des Preises aus."
+            wages : "Most T-Shirts of H&M are produced by sewers in Bangladesh. However, the production conditions are far from fair ",
+           materials : "Materials used for T-Shirts mostly come from Asian countries like Bangladesh and Taiwan. ",
+           logistics : "Because the wages for sewers in Asian countries are so low, the logistic prices are a lot higher.",
+           taxes : "19 Percent for taxes might sound quite a lot, however, the profit range for clothing companies are quite high.",
+           profit : "Even if the T-Shirt costs only 5 Euros, it’s a very profitable price for H&M. Due to its low production costs, the company can set the price that low without loosing a lot of profit",
+           marketing : "The clothing industry is hightly competitive. Profit can chance rapidly within months if the consumer decides to buy from the competitor. So marketing is very important to H&M."
+
         }
 
     }
