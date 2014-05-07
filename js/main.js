@@ -203,8 +203,8 @@ $("#checkBtn").click(function() {
         direction: "RIGHT",
         duration: "500",
         depth: 0,
-        verso: '<span class="lead headline">Lohn</span><div class="diagramm"><div class="diagramm-default red"><div style="height:' + (100-guessedValue) + '%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">'+guessedValue+'%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:' + (100-correctValue)+ '%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">'+correctValue+'%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
-        recto: '<span class="lead headline">Lohn</span>'+textValue+''
+        verso: '<span class="lead headline">'+myBucketValue[i]+'</span><div class="diagramm"><div class="diagramm-default red"><div style="height:' + (100-guessedValue) + '%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">'+guessedValue+'%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:' + (100-correctValue)+ '%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">'+correctValue+'%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+        recto: '<span class="lead headline">'+myBucketValue[i]+'</span>'+textValue+''
     });
 
     $("#"+myBucketValue[i]+"-bucket").hover(function() {
