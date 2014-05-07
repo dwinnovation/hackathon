@@ -6,7 +6,7 @@
 
 body {
 	font-family: 'Open Sans', sans-serif;
-    padding-top: 50px;
+    padding-top: 25px;
     padding-bottom: 20px;
 /*    background-color: #F5F4F2; */
     color: #3E3E3E;
@@ -120,7 +120,7 @@ h2 {
 	font-size: 3em;
 }
 
-#coinStack img {
+#coinStack {
 	cursor: move;
 }
 
