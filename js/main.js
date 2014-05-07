@@ -165,13 +165,20 @@ $(document).ready(function() {
             }
     );
 
-    // onclick handler for button
+    // onclick handler for custom value button
     $('#coinModal .valueCustomPanel .btn').on('click', function() {
         var coinValue = $('#coinModal .valueCustomPanel input').val();
+
         if (typeof coinValue === 'undefined' || coinValue === '') {
             hideCoinModal(null);
         } else {
-            hideCoinModal(parseInt(coinValue));
+            var totalVal = parseInt($('.total .distributed').text()) + parseInt(coinValue);
+
+            if (totalVal > 100) {
+            	$('#coinModal valueCustomPanel');
+            } else {
+                hideCoinModal(parseInt(coinValue));
+            }
         }
     });
 
