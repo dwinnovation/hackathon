@@ -82,6 +82,11 @@ function coinDropped(coinValue, bucket) {
 
 function dragCoin(coinItem, event) {
     // console.log("dragCoin");
+      // Drag Image
+        var image = document.createElement('img');
+        image.src = 'img/coin.png';
+        console.log(image);
+    event.dataTransfer.setDragImage(image, 0, 0);
 }
 
 function dropCoin(bucketItem, event) {
@@ -110,7 +115,7 @@ function initGame(productDescription) {
     $('#productInfoPanel').find('.productPrice').text(productDescription.price);
 
     // TODO: gray overlay while resetting
-    
+
     // load the costs, reset buckets:
     for (costKey in productDescription.costs) {
         var costBucket = $('#buckets [id$=' + costKey + '-bucket]');
@@ -120,7 +125,7 @@ function initGame(productDescription) {
                 .data('guessed', 0);
 
         costBucket.find('.guessed').show().text(0);
-        
+
         costBucket.find('.flipper').remove();
         costBucket.find('img').show();
     }
@@ -169,7 +174,7 @@ $(document).ready(function() {
             hideCoinModal(parseInt(coinValue));
         }
     });
-    
+
     // enter key handler
     $('#coinModal .valueCustomPanel input').on('keyup', function(e){
 	    if (e.keyCode == 13) {
@@ -184,7 +189,7 @@ $(document).ready(function() {
     // check button handler: do scoring, display results:
     $('#checkBtn').on('click', function() {
         $('#checkBtn').prop('disabled', true);
-    	
+
     	score();
 
         // show level navigator:
