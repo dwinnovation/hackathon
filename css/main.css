@@ -107,3 +107,43 @@ h2 {
 	padding: 20px 0;
 	font-size: 2em;
 }
+
+.diagramm {
+	height:200px;
+}
+
+.diagramm-default {
+	height: 170px; 
+	width:40px; 
+	float:left; 
+	margin-left:25px; 
+	color:white;
+}
+
+.diagramm-default div {
+	width:40px; background:grey;
+}
+
+.diagramm-label-left {
+	position:absolute; 
+	top:220px; 
+	left:40px;
+}
+
+.diagramm-label-right {
+	position:absolute; 
+	top:220px; 
+	left:110px;
+}
+
+#diagramm-correct, #diagramm-guess {
+	padding-left:5px;
+}
+
+.red {
+	background:red;
+}
+
+.blue {
+	background:blue;
+}

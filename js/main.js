@@ -138,8 +138,8 @@ $("#checkBtn").click(function() {
     	direction:"RIGHT",
 	    duration: "500",
 	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
+	    verso:'<span class="lead headline">Lohn</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+		recto:'<span class="lead headline">Lohn</span>Hier steht noch mehr Zeug'
  	});
 
  	$("#wages-bucket").hover(function(){
@@ -151,8 +151,8 @@ $("#checkBtn").click(function() {
     	direction:"RIGHT",
 	    duration: "500",
 	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
+	    verso:'<span class="lead headline">Material</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+		recto:'<span class="lead headline">Material</span>Hier steht noch mehr Zeug'
 	 	});
 	 }, 1500);
 
@@ -165,8 +165,8 @@ $("#checkBtn").click(function() {
     	direction:"RIGHT",
 	    duration: "500",
 	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
+	    verso:'<span class="lead headline">Logistik</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+		recto:'<span class="lead headline">Logistik</span>Hier steht noch mehr Zeug'
 	 	});
 	 }, 2500);
 
@@ -179,8 +179,8 @@ $("#checkBtn").click(function() {
     	direction:"RIGHT",
 	    duration: "500",
 	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
+	    verso:'<span class="lead headline">Steuern</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+		recto:'<span class="lead headline">Steuern</span>Hier steht noch mehr Zeug'
 	 	});
 	 }, 3500);
 
@@ -193,8 +193,8 @@ $("#checkBtn").click(function() {
     	direction:"RIGHT",
 	    duration: "500",
 	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
+	    verso:'<span class="lead headline">Profit</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+		recto:'<span class="lead headline">Profit</span>Hier steht noch mehr Zeug'
 	 	});
 	 }, 4500);
 
@@ -207,8 +207,8 @@ $("#checkBtn").click(function() {
     	direction:"RIGHT",
 	    duration: "500",
 	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
+	    verso:'<span class="lead headline">Marketing</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+		recto:'<span class="lead headline">Marketing</span>Hier steht noch mehr Zeug'
 	 	});
 	 }, 5500);
 
