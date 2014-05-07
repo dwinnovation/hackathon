@@ -4,10 +4,10 @@
  *     the bucket object the coin was dropped on
  */
 function showCoinModal(bucket) {
-	// save bucket object so we can use it later
-	$('#coinModal').data('bucket', bucket);
-	// show dialog
-	$('#coinModal').modal();
+    // save bucket object so we can use it later
+    $('#coinModal').data('bucket', bucket);
+    // show dialog
+    $('#coinModal').modal();
 }
 
 /**
@@ -16,15 +16,15 @@ function showCoinModal(bucket) {
  *     the selected value or null
  */
 function hideCoinModal(value) {
-	if (value === null || value == 0) {
-		// nothing
-	} else {
-		var bucket = $('#coinModal').data('bucket');
-		// drop coin into the bucket
-		coinDropped(value, bucket);
-	}
+    if (value === null || value == 0) {
+        // nothing
+    } else {
+        var bucket = $('#coinModal').data('bucket');
+        // drop coin into the bucket
+        coinDropped(value, bucket);
+    }
 
-	$('#coinModal').modal('hide');
+    $('#coinModal').modal('hide');
 }
 
 /**
@@ -58,9 +58,9 @@ function score() {
 
 function coinDropped(coinValue, bucket) {
 
-	var bucketValue = $(bucket).data('guessed');
+    var bucketValue = $(bucket).data('guessed');
 
-	console.log(coinValue);
+    console.log(coinValue);
 
     if (typeof bucketValue === 'undefined' || bucketValue === '')
         bucketValue = 0;
@@ -79,145 +79,151 @@ function coinDropped(coinValue, bucket) {
 
     // enable "check" button when 100 coins have been distributed:
     if (totalVal === 100)
-    	$('#checkBtn').removeAttr('disabled');
+        $('#checkBtn').removeAttr('disabled');
 }
 
 function dragCoin(coinItem, event) {
-	console.log("dragCoin");
+    console.log("dragCoin");
 }
 
 function dropCoin(bucketItem, event) {
-      var totalValue = $('.total .distributed').text()
-  if(totalValue < 100){
-      	// show dialog for selecting coin value:
-	showCoinModal(bucketItem);
-  } 
+    var totalValue = $('.total .distributed').text();
+    if (totalValue < 100) {
+        // show dialog for selecting coin value:
+        showCoinModal(bucketItem);
+    }
 
 
-	// tell browser that we are handled this event:
-	event.preventDefault();
+    // tell browser that we are handled this event:
+    event.preventDefault();
 }
 
 /**
  * this code runs when page finished loading:
  */
 $(document).ready(function() {
-	// init modal dialog:
+    // init modal dialog:
 
-	// onclick handlers for value panels:
-	$('#coinModal .valuePanel').each(
-		function(index,item) {
-			$(item).on('click',function(){
-				var coinValue = $(item).data('value');
-				console.log(coinValue);
-				hideCoinModal(coinValue)
-			});
-		}
-	);
+    // onclick handlers for value panels:
+    $('#coinModal .valuePanel').each(
+            function(index, item) {
+                $(item).on('click', function() {
+                    var coinValue = $(item).data('value');
+                       var totalValue = $('.distributed').text();
 
-	$('#coinModal .valueCustomPanel .btn').on('click',function(){
-		var coinValue = $('#coinModal .valueCustomPanel input').val();
-		if (typeof coinValue === 'undefined' || coinValue === '') {
-			hideCoinModal(null);
-		} else {
-			hideCoinModal(parseInt(coinValue));
-		}
-	});
+                    var currentTotal = parseInt(coinValue) + parseInt(totalValue);
+                     console.log(currentTotal);
+                    if(( currentTotal) <= 100){
+                       hideCoinModal(coinValue);
+                    }
 
-	$('#coinModal .valuePanelCustom').on('click', function(){
-		console.log("custom");
-	});
+                });
+            }
+    );
 
-	// check button handler: do scoring, display results:
-	$('#checkBtn').on('click',function(){
-		score();
-	});
+    $('#coinModal .valueCustomPanel .btn').on('click', function() {
+        var coinValue = $('#coinModal .valueCustomPanel input').val();
+        if (typeof coinValue === 'undefined' || coinValue === '') {
+            hideCoinModal(null);
+        } else {
+            hideCoinModal(parseInt(coinValue));
+        }
+    });
+
+    $('#coinModal .valuePanelCustom').on('click', function() {
+        console.log("custom");
+    });
+
+    // check button handler: do scoring, display results:
+    $('#checkBtn').on('click', function() {
+        score();
+    });
 });
 
 //Flippy
 
 $("#checkBtn").click(function() {
 
-	$("#wages-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
- 	});
+    $("#wages-bucket").flippy({
+        direction: "RIGHT",
+        duration: "500",
+        depth: 0,
+        verso: "<img src='img/coin.jpg' />",
+        recto: "Hier steht noch mehr Zeug"
+    });
 
- 	$("#wages-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
+    $("#wages-bucket").hover(function() {
+        $(this).flippyReverse();
+    });
 
- 	setTimeout(function(){
- 		$("#materials-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
-	 	});
-	 }, 1500);
+    setTimeout(function() {
+        $("#materials-bucket").flippy({
+            direction: "RIGHT",
+            duration: "500",
+            depth: 0,
+            verso: "<img src='img/coin.jpg' />",
+            recto: "Hier steht noch mehr Zeug"
+        });
+    }, 1500);
 
-	$("#materials-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
+    $("#materials-bucket").hover(function() {
+        $(this).flippyReverse();
+    });
 
-	  	setTimeout(function(){
- 		$("#logistics-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
-	 	});
-	 }, 2500);
+    setTimeout(function() {
+        $("#logistics-bucket").flippy({
+            direction: "RIGHT",
+            duration: "500",
+            depth: 0,
+            verso: "<img src='img/coin.jpg' />",
+            recto: "Hier steht noch mehr Zeug"
+        });
+    }, 2500);
 
-	$("#logistics-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
+    $("#logistics-bucket").hover(function() {
+        $(this).flippyReverse();
+    });
 
-	  	setTimeout(function(){
- 		$("#taxes-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
-	 	});
-	 }, 3500);
+    setTimeout(function() {
+        $("#taxes-bucket").flippy({
+            direction: "RIGHT",
+            duration: "500",
+            depth: 0,
+            verso: "<img src='img/coin.jpg' />",
+            recto: "Hier steht noch mehr Zeug"
+        });
+    }, 3500);
 
-	$("#taxes-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
+    $("#taxes-bucket").hover(function() {
+        $(this).flippyReverse();
+    });
 
-	  	setTimeout(function(){
- 		$("#profit-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
-	 	});
-	 }, 4500);
+    setTimeout(function() {
+        $("#profit-bucket").flippy({
+            direction: "RIGHT",
+            duration: "500",
+            depth: 0,
+            verso: "<img src='img/coin.jpg' />",
+            recto: "Hier steht noch mehr Zeug"
+        });
+    }, 4500);
 
-	$("#profit-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
+    $("#profit-bucket").hover(function() {
+        $(this).flippyReverse();
+    });
 
-	  	setTimeout(function(){
- 		$("#marketing-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:"<img src='img/coin.jpg' />",
-		recto:"Hier steht noch mehr Zeug"
-	 	});
-	 }, 5500);
+    setTimeout(function() {
+        $("#marketing-bucket").flippy({
+            direction: "RIGHT",
+            duration: "500",
+            depth: 0,
+            verso: "<img src='img/coin.jpg' />",
+            recto: "Hier steht noch mehr Zeug"
+        });
+    }, 5500);
 
-	$("#marketing-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
+    $("#marketing-bucket").hover(function() {
+        $(this).flippyReverse();
+    });
 
- });
+});
