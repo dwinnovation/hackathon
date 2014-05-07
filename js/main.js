@@ -8,6 +8,11 @@ function showCoinModal(bucket) {
     $('#coinModal').data('bucket', bucket);
     // show dialog
     $('#coinModal').modal();
+     var audioElement = document.createElement('audio');
+        audioElement.setAttribute('src', 'sound/sound.mp3');
+
+     audioElement.play().delay(500).stop();
+
 }
 
 /**
@@ -141,6 +146,9 @@ function initGame(productDescription) {
  * this code runs when page finished loading:
  */
 $(document).ready(function() {
+
+
+
 
     // initialize game with first product:
     initGame(productData[currentProductIndex]);
