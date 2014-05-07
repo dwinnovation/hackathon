@@ -82,6 +82,11 @@ function coinDropped(coinValue, bucket) {
 
 function dragCoin(coinItem, event) {
     // console.log("dragCoin");
+      // Drag Image
+        var image = document.createElement('img');
+        image.src = 'img/coin.png';
+        console.log(image);
+    event.dataTransfer.setDragImage(image, 0, 0);
 }
 
 function dropCoin(bucketItem, event) {
@@ -169,7 +174,7 @@ $(document).ready(function() {
             hideCoinModal(parseInt(coinValue));
         }
     });
-    
+
     // enter key handler
     $('#coinModal .valueCustomPanel input').on('keyup', function(e){
 	    if (e.keyCode == 13) {
