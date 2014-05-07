@@ -200,3 +200,7 @@ li{
 footer p {
 	font-size:12px;
 }
+
+#checkBtn, #nextLevelBtn {
+	height:45px;
+}
