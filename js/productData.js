@@ -35,9 +35,9 @@
         texts: {
             wages : "Hight prices? High wages? Not really, people working at gas stations don’t really make a million because they sell gasoline.",
            materials : "Gas is getting short. The rising prices of gas at stock exchanges make it less lucrative to sell gas at the station.",
-           logistics : "Giant pipelines transport the \"black gold\" to the rafineries. However, many accidents happen and these pipelines are often used as a pressurizing medium within countries in conflicts."
+           logistics : "Giant pipelines transport the \"black gold\" to the rafineries. However, many accidents happen and these pipelines are often used as a pressurizing medium within countries in conflicts.",
            taxes : "Environment taxes, taxes for gas, sales taxes - most of the price of gasoline is for taxes, no doubt about that.",
-           profit : "Filling stations do not get most of their profit thanks to the sell of gasoline. It is more profitable for them to sell goods for resale intheir own shop."
+           profit : "Filling stations do not get most of their profit thanks to the sell of gasoline. It is more profitable for them to sell goods for resale intheir own shop.",
            marketing : "Men working at gas stations can’t dictate the price of their gas. The prices of other filling stations are collected and then adapted."
         }
 
@@ -59,7 +59,7 @@
            materials : "Less bakeries are actually producing their bread by themselve. They let other companies preproduce their products, so they can save time",
            logistics : "Each day, tons of prezels, bread and bread rolls are transported across the country.",
            taxes : "The consumer in Germany can be happy: For food taxes are lower than for other industrie products.",
-           profit : "Bakeries can dictate their prices for their product themselves. However, they depend on the prices of their competitors."
+           profit : "Bakeries can dictate their prices for their product themselves. However, they depend on the prices of their competitors.",
            marketing : "Products like bread don’t need a lot of marketing, because it’s an everyday product."
         }
 
