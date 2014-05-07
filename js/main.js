@@ -58,11 +58,7 @@ function score() {
 
 function coinDropped(coinValue, bucket) {
 
-<<<<<<< HEAD
     var bucketValue = $(bucket).data('guessed');
-=======
-	var bucketValue = $(bucket).data('guessed');
->>>>>>> 88bf9d9dedfe2a46476ea888f6bdf9ce2929d6bb
 
     if (typeof bucketValue === 'undefined' || bucketValue === '')
         bucketValue = 0;
@@ -139,39 +135,39 @@ function initGame(productDescription) {
 function initGame(productDescription) {
 
 	console.log(productDescription);
-	
+
 	// load product base data
 	$('#productImage').attr('src', productDescription.imageUrl);
 
 	// TODO: use productDescription.name;
-	
+
 	// load the costs, reset buckets:
 	for (costKey in productDescription.costs) {
 		var costBucket = $('#buckets [id$='+costKey+'-bucket]');
-		
+
 		console.log(costBucket);
-		
+
 		costBucket.find('img.bucket')
 			.data('correct', productDescription.costs[costKey])
 			.data('guessed', 0);
-		
+
 		costBucket.find('.guessed').text( 0 );
 	}
-	
+
 	// reset play status:
 	$('.total .distributed').text(0);
 	$('#checkBtn').prop('disabled', true);
-	
+
 }
 
 /**
  * this code runs when page finished loading:
  */
 $(document).ready(function() {
-<<<<<<< HEAD
 
 	// initialize game with first product:
 	initGame(productData[0]);
+
     // init modal dialog:
 
     // onclick handlers for value panels:
@@ -209,132 +205,14 @@ $(document).ready(function() {
         score();
     });
 
-=======
-	// init modal dialog:
-
-	// onclick handlers for value panels:
-	$('#coinModal .valuePanel').each(
-		function(index,item) {
-			$(item).on('click',function(){
-				var coinValue = $(item).data('value');
-				console.log(coinValue);
-				hideCoinModal(coinValue)
-			});
-		}
-	);
-
-	$('#coinModal .valueCustomPanel .btn').on('click',function(){
-		var coinValue = $('#coinModal .valueCustomPanel input').val();
-		if (typeof coinValue === 'undefined' || coinValue === '') {
-			hideCoinModal(null);
-		} else {
-			hideCoinModal(parseInt(coinValue));
-		}
-	});
-
-	$('#coinModal .valuePanelCustom').on('click', function(){
-		console.log("custom");
-	});
-
-	// check button handler: do scoring, display results:
-	$('#checkBtn').on('click',function(){
-		score();
-	});
-	
 	// initialize game with first product:
 	initGame(productData[0]);
->>>>>>> 88bf9d9dedfe2a46476ea888f6bdf9ce2929d6bb
 });
 
 //Flippy
 
 $("#checkBtn").click(function() {
 
-<<<<<<< HEAD
-    $("#wages-bucket").flippy({
-        direction: "RIGHT",
-        duration: "500",
-        depth: 0,
-        verso: "<img src='img/coin.jpg' />",
-        recto: "Hier steht noch mehr Zeug"
-    });
-
-    $("#wages-bucket").hover(function() {
-        $(this).flippyReverse();
-    });
-
-    setTimeout(function() {
-        $("#materials-bucket").flippy({
-            direction: "RIGHT",
-            duration: "500",
-            depth: 0,
-            verso: "<img src='img/coin.jpg' />",
-            recto: "Hier steht noch mehr Zeug"
-        });
-    }, 1500);
-
-    $("#materials-bucket").hover(function() {
-        $(this).flippyReverse();
-    });
-
-    setTimeout(function() {
-        $("#logistics-bucket").flippy({
-            direction: "RIGHT",
-            duration: "500",
-            depth: 0,
-            verso: "<img src='img/coin.jpg' />",
-            recto: "Hier steht noch mehr Zeug"
-        });
-    }, 2500);
-
-    $("#logistics-bucket").hover(function() {
-        $(this).flippyReverse();
-    });
-
-    setTimeout(function() {
-        $("#taxes-bucket").flippy({
-            direction: "RIGHT",
-            duration: "500",
-            depth: 0,
-            verso: "<img src='img/coin.jpg' />",
-            recto: "Hier steht noch mehr Zeug"
-        });
-    }, 3500);
-
-    $("#taxes-bucket").hover(function() {
-        $(this).flippyReverse();
-    });
-
-    setTimeout(function() {
-        $("#profit-bucket").flippy({
-            direction: "RIGHT",
-            duration: "500",
-            depth: 0,
-            verso: "<img src='img/coin.jpg' />",
-            recto: "Hier steht noch mehr Zeug"
-        });
-    }, 4500);
-
-    $("#profit-bucket").hover(function() {
-        $(this).flippyReverse();
-    });
-
-    setTimeout(function() {
-        $("#marketing-bucket").flippy({
-            direction: "RIGHT",
-            duration: "500",
-            depth: 0,
-            verso: "<img src='img/coin.jpg' />",
-            recto: "Hier steht noch mehr Zeug"
-        });
-    }, 5500);
-
-    $("#marketing-bucket").hover(function() {
-        $(this).flippyReverse();
-    });
-
-});
-=======
 	$("#wages-bucket").flippy({
     	direction:"RIGHT",
 	    duration: "500",
@@ -418,4 +296,3 @@ $("#checkBtn").click(function() {
  	});
 
  });
->>>>>>> 88bf9d9dedfe2a46476ea888f6bdf9ce2929d6bb
