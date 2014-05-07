@@ -158,6 +158,9 @@ function initGame(productDescription) {
 	$('.total .distributed').text(0);
 	$('#checkBtn').prop('disabled', true);
 
+    // hide level navigator:
+    $('#levelNavigator').addClass("hidden");
+	
 }
 
 /**
@@ -203,6 +206,9 @@ $(document).ready(function() {
     // check button handler: do scoring, display results:
     $('#checkBtn').on('click', function() {
         score();
+        
+        // show level navigator:
+        $('#levelNavigator').removeClass("hidden");
     });
     
     $('#nextLevelBtn').on('click', function() {
