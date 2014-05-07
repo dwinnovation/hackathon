@@ -166,7 +166,7 @@ function initGame(productDescription) {
 $(document).ready(function() {
 
 	// initialize game with first product:
-	initGame(productData[0]);
+	initGame(productData[currentProductIndex]);
 
     // init modal dialog:
 
@@ -203,6 +203,10 @@ $(document).ready(function() {
     // check button handler: do scoring, display results:
     $('#checkBtn').on('click', function() {
         score();
+    });
+    
+    $('#nextLevelBtn').on('click', function() {
+    	initGame(productData[++currentProductIndex]);
     });
 
 	// initialize game with first product:

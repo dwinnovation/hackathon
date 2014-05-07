@@ -48,3 +48,5 @@ var productData = [
 		}
 	}
 ];
+
+var currentProductIndex = 0;
