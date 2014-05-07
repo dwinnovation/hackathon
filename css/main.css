@@ -83,6 +83,11 @@ h2 {
 	margin-left: 15px;
 }
 
+#buckets > div {
+	height:279px;
+	background:#fff;
+}
+
 #coinStack { }
 
 #coinModal .valuePanel,.valueCustomPanel {
@@ -93,6 +98,7 @@ h2 {
 }
 #coinModal .valuePanel:hover,.valueCustomPanel:hover {
 	background-color: #ddd;
+	cursor:pointer;
 }
 
 #coinModal .valueCustomPanel input { }
