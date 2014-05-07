@@ -109,17 +109,20 @@ function initGame(productDescription) {
     $('#productInfoPanel').find('.productName').text(productDescription.name);
     $('#productInfoPanel').find('.productPrice').text(productDescription.price);
 
+    // TODO: gray overlay while resetting
+    
     // load the costs, reset buckets:
     for (costKey in productDescription.costs) {
         var costBucket = $('#buckets [id$=' + costKey + '-bucket]');
-
-        //	console.log(costBucket);
 
         costBucket
                 .data('correct', productDescription.costs[costKey])
                 .data('guessed', 0);
 
         costBucket.find('.guessed').text(0);
+        
+        costBucket.find('.flipper').remove();
+        costBucket.find('img').show();
     }
 
     // reset play status:
@@ -172,7 +175,9 @@ $(document).ready(function() {
 
     // check button handler: do scoring, display results:
     $('#checkBtn').on('click', function() {
-        score();
+        $('#checkBtn').prop('disabled', true);
+    	
+    	score();
 
         // show level navigator:
         $('#levelNavigator').removeClass("hidden");
