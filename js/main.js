@@ -119,7 +119,7 @@ function initGame(productDescription) {
                 .data('correct', productDescription.costs[costKey])
                 .data('guessed', 0);
 
-        costBucket.find('.guessed').text(0);
+        costBucket.find('.guessed').show().text(0);
         
         costBucket.find('.flipper').remove();
         costBucket.find('img').show();
@@ -205,7 +205,7 @@ $("#checkBtn").click(function() {
         console.log(correctValue);
 
         $("#" + myBucketValue[i] + "-bucket img").hide();
-            $("#" + myBucketValue[i] + "-bucket .guessed").hide();
+        $("#" + myBucketValue[i] + "-bucket .guessed").hide();
 
         var div = $('<div>').addClass('flipper');
 
