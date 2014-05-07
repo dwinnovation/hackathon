@@ -108,6 +108,10 @@ h2 {
 	font-size: 2em;
 }
 
+.bucket img {
+	margin-left:16px;
+}
+
 .diagramm {
 	height:200px;
 }
