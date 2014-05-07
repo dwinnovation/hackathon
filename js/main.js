@@ -53,7 +53,7 @@ function score() {
 
     var result = averageDeviation(guessed, correct);
 
-   // console.log(result);
+    // console.log(result);
 }
 
 function coinDropped(coinValue, bucket) {
@@ -77,11 +77,11 @@ function coinDropped(coinValue, bucket) {
 
     // enable "check" button when 100 coins have been distributed:
     if (totalVal === 100)
-    	$('#checkBtn').prop('disabled', false);
+        $('#checkBtn').prop('disabled', false);
 }
 
 function dragCoin(coinItem, event) {
-   // console.log("dragCoin");
+    // console.log("dragCoin");
 }
 
 function dropCoin(bucketItem, event) {
@@ -102,29 +102,29 @@ function dropCoin(bucketItem, event) {
  */
 function initGame(productDescription) {
 
-	// console.log(productDescription);
+    // console.log(productDescription);
 
-	// load product base data
-	$('#productImage').attr('src', productDescription.imageUrl);
+    // load product base data
+    $('#productImage').attr('src', productDescription.imageUrl);
 
-	// TODO: use productDescription.name;
+    // TODO: use productDescription.name;
 
-	// load the costs, reset buckets:
-	for (costKey in productDescription.costs) {
-		var costBucket = $('#buckets [id$='+costKey+'-bucket]');
+    // load the costs, reset buckets:
+    for (costKey in productDescription.costs) {
+        var costBucket = $('#buckets [id$=' + costKey + '-bucket]');
 
-	//	console.log(costBucket);
+        //	console.log(costBucket);
 
-		costBucket
-            .data('correct', productDescription.costs[costKey])
-			.data('guessed', 0);
+        costBucket
+                .data('correct', productDescription.costs[costKey])
+                .data('guessed', 0);
 
-		costBucket.find('.guessed').text( 0 );
-	}
+        costBucket.find('.guessed').text(0);
+    }
 
-	// reset play status:
-	$('.total .distributed').text(0);
-	$('#checkBtn').prop('disabled', true);
+    // reset play status:
+    $('.total .distributed').text(0);
+    $('#checkBtn').prop('disabled', true);
 
 }
 
@@ -136,27 +136,27 @@ function initGame(productDescription) {
 
 //	console.log(productDescription);
 
-	// load product base data
-	$('#productImage').attr('src', productDescription.imageUrl);
+    // load product base data
+    $('#productImage').attr('src', productDescription.imageUrl);
 
-	// TODO: use productDescription.name;
+    // TODO: use productDescription.name;
 
-	// load the costs, reset buckets:
-	for (costKey in productDescription.costs) {
-		var costBucket = $('#buckets [id$='+costKey+'-bucket]');
+    // load the costs, reset buckets:
+    for (costKey in productDescription.costs) {
+        var costBucket = $('#buckets [id$=' + costKey + '-bucket]');
 
-	//	console.log(costBucket);
+        //	console.log(costBucket);
 
-		costBucket
-			.data('correct', productDescription.costs[costKey])
-			.data('guessed', 0);
+        costBucket
+                .data('correct', productDescription.costs[costKey])
+                .data('guessed', 0);
 
-		costBucket.find('.guessed').text( 0 );
-	}
+        costBucket.find('.guessed').text(0);
+    }
 
-	// reset play status:
-	$('.total .distributed').text(0);
-	$('#checkBtn').prop('disabled', true);
+    // reset play status:
+    $('.total .distributed').text(0);
+    $('#checkBtn').prop('disabled', true);
 
     // hide level navigator:
     $('#levelNavigator').addClass("hidden");
@@ -168,8 +168,8 @@ function initGame(productDescription) {
  */
 $(document).ready(function() {
 
-	// initialize game with first product:
-	initGame(productData[currentProductIndex]);
+    // initialize game with first product:
+    initGame(productData[currentProductIndex]);
 
     // init modal dialog:
 
@@ -178,12 +178,12 @@ $(document).ready(function() {
             function(index, item) {
                 $(item).on('click', function() {
                     var coinValue = $(item).data('value');
-                       var totalValue = $('.distributed').text();
+                    var totalValue = $('.distributed').text();
 
                     var currentTotal = parseInt(coinValue) + parseInt(totalValue);
-                //     console.log(currentTotal);
-                    if(( currentTotal) <= 100){
-                       hideCoinModal(coinValue);
+                    //     console.log(currentTotal);
+                    if ((currentTotal) <= 100) {
+                        hideCoinModal(coinValue);
                     }
 
                 });
@@ -210,100 +210,50 @@ $(document).ready(function() {
         // show level navigator:
         $('#levelNavigator').removeClass("hidden");
     });
-    
+
     $('#nextLevelBtn').on('click', function() {
-    	initGame(productData[++currentProductIndex]);
+        initGame(productData[++currentProductIndex]);
     });
 
-	// initialize game with first product:
-	initGame(productData[0]);
+    // initialize game with first product:
+    initGame(productData[0]);
 });
 
 //Flippy
 
 $("#checkBtn").click(function() {
- var taxesGuessedValue = $(".bucket taxes").data("data-guessed");
- console.log(taxesGuessedValue);
-	$("#wages-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:'<span class="lead headline">Lohn</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
-		recto:'<span class="lead headline">Lohn</span>Hier steht noch mehr Zeug'
- 	});
 
- 	$("#wages-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
+    var myBucketValue = new Array("wages", "materials", "logistics", "taxes", "profit", "marketing");
 
- 	setTimeout(function(){
- 		$("#materials-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:'<span class="lead headline">Material</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
-		recto:'<span class="lead headline">Material</span>Hier steht noch mehr Zeug'
-	 	});
-	 }, 1500);
+    for(var i=0; i<myBucketValue.length; i++){
+        var guessedValue =  $("#" + myBucketValue[i] + "-bucket").data("guessed");
+        var correctValue = productData[currentProductIndex].costs[myBucketValue[i]];
+        console.log(guessedValue);
+             console.log(correctValue);
 
-	$("#materials-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
+          $("#"+myBucketValue[i]+"-bucket").flippy({
+        direction: "RIGHT",
+        duration: "500",
+        depth: 0,
+        verso: '<span class="lead headline">Lohn</span><div class="diagramm"><div class="diagramm-default red"><div style="height:' + (100-guessedValue) + '%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">'+guessedValue+'%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:' + (100-correctValue)+ '%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">'+correctValue+'%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+        recto: '<span class="lead headline">Lohn</span>Hier steht noch mehr Zeug'
+    });
 
-	  	setTimeout(function(){
- 		$("#logistics-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:'<span class="lead headline">Logistik</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
-		recto:'<span class="lead headline">Logistik</span>Hier steht noch mehr Zeug'
-	 	});
-	 }, 2500);
+    $("#"+myBucketValue[i]+"-bucket").hover(function() {
+        $(this).flippyReverse();
+    });
 
-	$("#logistics-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
 
-	  	setTimeout(function(){
- 		$("#taxes-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:'<span class="lead headline">Steuern</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
-		recto:'<span class="lead headline">Steuern</span>Hier steht noch mehr Zeug'
-	 	});
-	 }, 3500);
+    setTimeout(function() {
+        $("#"+myBucketValue[i+1]+"-bucket").flippy({
+            direction: "RIGHT",
+            duration: "500",
+            depth: 0,
+            verso: '<span class="lead headline">Material</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+            recto: '<span class="lead headline">Material</span>Hier steht noch mehr Zeug'
+        });
+    }, 1500);
+    }
 
-	$("#taxes-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
 
-	  	setTimeout(function(){
- 		$("#profit-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:'<span class="lead headline">Profit</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
-		recto:'<span class="lead headline">Profit</span>Hier steht noch mehr Zeug'
-	 	});
-	 }, 4500);
-
-	$("#profit-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
-
-	  	setTimeout(function(){
- 		$("#marketing-bucket").flippy({
-    	direction:"RIGHT",
-	    duration: "500",
-	    depth:0,
-	    verso:'<span class="lead headline">Marketing</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
-		recto:'<span class="lead headline">Marketing</span>Hier steht noch mehr Zeug'
-	 	});
-	 }, 5500);
-
-	$("#marketing-bucket").hover(function(){
- 		$(this).flippyReverse();
- 	});
-
- });
+});
