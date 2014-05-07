@@ -160,6 +160,7 @@ $(document).ready(function() {
             }
     );
 
+    // onclick handler for button
     $('#coinModal .valueCustomPanel .btn').on('click', function() {
         var coinValue = $('#coinModal .valueCustomPanel input').val();
         if (typeof coinValue === 'undefined' || coinValue === '') {
@@ -167,6 +168,13 @@ $(document).ready(function() {
         } else {
             hideCoinModal(parseInt(coinValue));
         }
+    });
+    
+    // enter key handler
+    $('#coinModal .valueCustomPanel input').on('keyup', function(e){
+	    if (e.keyCode == 13) {
+	    	$('#coinModal .valueCustomPanel .btn').click();
+	    }
     });
 
     $('#coinModal .valuePanelCustom').on('click', function() {
