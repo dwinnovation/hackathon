@@ -151,26 +151,29 @@ h2 {
 }
 
 .diagramm-default {
-	height: 170px; 
-	width:40px; 
-	float:left; 
-	margin-left:25px; 
+	height: 170px;
+	width:46px;
+	float:left;
+	margin-left:25px;
 	color:white;
+        border-radius:4px;
 }
 
 .diagramm-default div {
-	width:40px; background:grey;
+	width:46px; background:#ccc;
+            border: 4px;
 }
 
 .diagramm-label-left {
-	position:absolute; 
-	top:220px; 
+	position:absolute;
+	top:220px;
 	left:40px;
+
 }
 
 .diagramm-label-right {
-	position:absolute; 
-	top:220px; 
+	position:absolute;
+	top:220px;
 	left:110px;
 }
 
@@ -179,9 +182,9 @@ h2 {
 }
 
 .red {
-	background:red;
+	background:#FF8A00;
 }
 
 .blue {
-	background:blue;
+	background:#88C100;
 }
