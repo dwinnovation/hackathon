@@ -87,8 +87,12 @@ function dragCoin(coinItem, event) {
 }
 
 function dropCoin(bucketItem, event) {
-	// show dialog for selecting coin value:
+      var totalValue = $('.total .distributed').text()
+  if(totalValue < 100){
+      	// show dialog for selecting coin value:
 	showCoinModal(bucketItem);
+  } 
+
 
 	// tell browser that we are handled this event:
 	event.preventDefault();
