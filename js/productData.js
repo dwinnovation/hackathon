@@ -13,7 +13,7 @@ var productData = [
 	},
 	{
 		name : "1l Benzin",
-		imageUrl : "img/benzin.jpg",
+		imageUrl : "img/benzin.png",
 		costs : {
 			wages : 1,
 			materials : 37,
@@ -25,7 +25,7 @@ var productData = [
 	},
 	{
 		name : "Roggenbrot",
-		imageUrl : "img/roggenbrot.jpg",
+		imageUrl : "img/brot.png",
 		costs : {
 			wages : 10,
 			materials : 20,
@@ -37,7 +37,7 @@ var productData = [
 	},
 	{
 		name : "H&M T-Shirt",
-		imageUrl : "img/tshirt.jpg",
+		imageUrl : "img/tshirt.png",
 		costs : {
 			wages : 1,
 			materials : 13,

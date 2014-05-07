@@ -52,6 +52,15 @@ h2 {
 	color:#ccc;
 }
 
+#productImage {
+	height: 300px;
+	width: auto;
+}
+
+#buckets {
+	padding-top: 20px;
+}
+
 #buckets.guessing span.guessed {
 	text-align: center;
 	font-size: 2em;
@@ -88,7 +97,14 @@ h2 {
 	background:#fff;
 }
 
-#coinStack { }
+#coinStack {
+	height: 300px;
+	padding-top: 150px;
+}
+
+#coinStack img {
+	cursor: move;
+}
 
 #coinModal .valuePanel,.valueCustomPanel {
 	/* background-color: #ddd; */
