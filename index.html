@@ -28,39 +28,39 @@
         <!-- hidden modal dialog -->
 
         <div id="coinModal" class="modal fade" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-  					<div class="modal-header">
-    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    					<h4 class="modal-title">How many coins do you want to put in here?</h4>
-  					</div>
-  					<div class="modal-body">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">How many coins do you want to put in here?</h4>
+                    </div>
+                    <div class="modal-body">
 
-						<div class="row">
-							<div class="col-md-4 valuePanel" data-value="1">1</div>
-							<div class="col-md-4 valuePanel" data-value="5">5</div>
-							<div class="col-md-4 valuePanel" data-value="15">15</div>
-						</div>
+                        <div class="row">
+                            <div class="col-md-4 valuePanel" data-value="1">1</div>
+                            <div class="col-md-4 valuePanel" data-value="5">5</div>
+                            <div class="col-md-4 valuePanel" data-value="15">15</div>
+                        </div>
 
-						<div class="row">
-							<div class="col-md-4 valuePanel" data-value="25">25</div>
-							<div class="col-md-4 valuePanel" data-value="50">50</div>
-							<div class="col-md-4 valueCustomPanel" data-value="custom">
-								<form role="form">
-									<div class="input-group">
-										<input type="number" class="form-control" id="customValueInput" placeholder="Wert">
-										<span class="btn input-group-addon"><i class="fa fa-check"></i></span>
+                        <div class="row">
+                            <div class="col-md-4 valuePanel" data-value="25">25</div>
+                            <div class="col-md-4 valuePanel" data-value="50">50</div>
+                            <div class="col-md-4 valueCustomPanel" data-value="custom">
+                                <form role="form">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="customValueInput" placeholder="Wert">
+                                        <span class="btn input-group-addon"><i class="fa fa-check"></i></span>
 
-									</div>
-								</form>
+                                    </div>
+                                </form>
 
-							</div>
-						</div>
+                            </div>
+                        </div>
 
-  					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
         <!-- /hidden modal dialog -->
 
@@ -71,90 +71,102 @@
                         <img title="Deutsche Welle" alt="Deutsche Welle" src="img/dw_logo_relaunch.png">
                     </a>
                     <a target="_self" href="http://www.br.de">
-                    	<img title="Bayerischer Rundfunk" alt="Deutsche Welle" src="http://www.br.de/static/img/logo/logo_home.png">
+                        <img title="Bayerischer Rundfunk" alt="Deutsche Welle" src="http://www.br.de/static/img/logo/logo_home.png">
                     </a>
                     <a target="_blank" href="http://www.ndr.de">
-                    	<img title="Norddeutscher Rundfunk" alt="Norddeutscher Rundfunk" src="img/NDR-Logo.jpg">
+                        <img title="Norddeutscher Rundfunk" alt="Norddeutscher Rundfunk" src="img/NDR-Logo.jpg">
                     </a>
                 </div>
                 <div id="title">
-                	<h1>iPay</h1>
-                	<h2>How much is your stuff worth?</h2>
+                    <h1>iPay</h1>
+                    <h2>How much is your stuff worth?</h2>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4" id="productInfoPanel">
-                	<span class="productName">iPhone 5S</span>
-                	<span class="productPrice">799€</span>
+                    <span class="productName">iPhone 5S</span>
+                    <span class="productPrice">799€</span>
                     <img id="coinStack" src="img/muenzen.png" alt="Muenzen" draggable="true" ondragstart="dragCoin(this,event)">
                 </div>
                 <div class="col-md-4 text-center">
-                   <img src="img/smartphone.png" id="productImage" alt="Produkt">
+                    <img src="img/smartphone.png" id="productImage" alt="Produkt">
+                </div>
+                <div class="col-md-4"><p> Shall we play a game?</p><ul>
+                        <li>  1. Drag a coin from the stash and drop it on one of the money bags.</li>
+                        <li> 2. Enter the percentage you think is spent on that particular section.</li>
+                        <li> 3. Once you have distributed 100 % of the products price, click “check”</li>
+                        <li> 4. Be suprised by how wrong you where and learn why!</li>
+                    </ul>
+
+
+
+
+
                 </div>
             </div>
 
             <div id="buckets" class="row guessing">
                 <div class="col-md-2 bucket wages" id="wages-bucket" data-guessed="" data-correct="35"
-                        ondragenter="return false" ondragover="return false" ondrop="dropCoin(this,event)">
-                	<span class="lead headline">wages</span>
+                     ondragenter="return false" ondragover="return false" ondrop="dropCoin(this, event)">
+                    <span class="lead headline">wages</span>
                     <img src="img/sack.png" alt="Bucket">
                     <span class="guessed">0</span>
                 </div>
                 <div class="col-md-2 bucket materials" id="materials-bucket" data-guessed="" data-correct="15"
-                        ondragenter="return false" ondragover="return false" ondrop="dropCoin(this,event)">
-                	<span class="lead headline">materials</span>
+                     ondragenter="return false" ondragover="return false" ondrop="dropCoin(this, event)">
+                    <span class="lead headline">materials</span>
                     <img src="img/sack.png" alt="Bucket" >
                     <span class="guessed">0</span>
                 </div>
                 <div class="col-md-2 bucket logistics" id="logistics-bucket" data-guessed="" data-correct="40"
-                         ondragenter="return false" ondragover="return false" ondrop="dropCoin(this,event)">
-                	<span class="lead headline">logistics</span>
+                     ondragenter="return false" ondragover="return false" ondrop="dropCoin(this, event)">
+                    <span class="lead headline">logistics</span>
                     <img src="img/sack.png" alt="Bucket" >
                     <span class="guessed">0</span>
                 </div>
                 <div class="col-md-2 bucket taxes" id="taxes-bucket" data-guessed="" data-correct="5"
-                         ondragenter="return false" ondragover="return false" ondrop="dropCoin(this,event)">
+                     ondragenter="return false" ondragover="return false" ondrop="dropCoin(this, event)">
 
                     <span class="lead headline">taxes</span>
                     <img src="img/sack.png" alt="Bucket" >
                     <span class="guessed">0</span>
                 </div>
                 <div class="col-md-2 bucket profit" id="profit-bucket" data-guessed="" data-correct="5"
-                         ondragenter="return false" ondragover="return false" ondrop="dropCoin(this,event)">
-                	<span class="lead headline">profit</span>
+                     ondragenter="return false" ondragover="return false" ondrop="dropCoin(this, event)">
+                    <span class="lead headline">profit</span>
                     <img src="img/sack.png" alt="Bucket" >
                     <span class="guessed">0</span>
                 </div>
                 <div class="col-md-2 bucket marketing" id="marketing-bucket" data-guessed="" data-correct="0"
-                         ondragenter="return false" ondragover="return false" ondrop="dropCoin(this,event)">
-                	<span class="lead headline">marketing</span>
+                     ondragenter="return false" ondragover="return false" ondrop="dropCoin(this, event)">
+                    <span class="lead headline">marketing</span>
                     <img src="img/sack.png" alt="Bucket">
                     <span class="guessed">0</span>
                 </div>
             </div>
 
-			<div class="row total">
-				<div class="col-md-10">
-					<div class="pull-right">
-						<span class="lead">You distributed: <span class="distributed">0</span> / <span class="hundred">100</span></span>
-					</div>
-				</div>
-				<div class="col-md-2">
-                   	<button id="checkBtn" class="btn btn-primary btn-lg" disabled>check <i class="fa fa-trophy fa-lg"></i></button>
-				</div>
-			</div>
+            <div class="row total">
+                <div class="col-md-10">
+                    <div class="pull-right">
+                        <span class="lead">You distributed: <span class="distributed">0</span> / <span class="hundred">100</span></span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button id="checkBtn" class="btn btn-primary btn-lg" disabled>check <i class="fa fa-trophy fa-lg"></i></button>
+                </div>
+            </div>
 
-			<div class="row hidden" id="levelNavigator">
-				<div class="col-md-10">
-					<div class="pull-right">
-						<span class="lead">Find out for another product?</span>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<button id="nextLevelBtn" class="btn btn-primary btn-lg">next <i class="fa fa-chevron-right fa-lg"></i></button>
-				</div>
-			</div>
+            <div class="row hidden" id="levelNavigator">
+                <div class="col-md-10">
+                    <div class="pull-right">
+                        <span class="lead">Find out for another product?</span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button id="nextLevelBtn" class="btn btn-primary btn-lg">next <i class="fa fa-chevron-right fa-lg"></i></button>
+                </div>
+            </div>
 
             <footer>
                 <p>&copy; Newsgames Hackathon 2014</p>
