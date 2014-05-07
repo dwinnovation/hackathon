@@ -52,6 +52,14 @@ h2 {
 	color:#ccc;
 }
 
+p{
+    font-size: 2em;
+}
+
+li{
+     font-size: 1.25em;
+}
+
 #productImage {
 	height: 300px;
 	width: auto;
