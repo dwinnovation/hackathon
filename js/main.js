@@ -192,35 +192,45 @@ $("#checkBtn").click(function() {
 
     var myBucketValue = new Array("wages", "materials", "logistics", "taxes", "profit", "marketing");
 
-    for(var i=0; i<myBucketValue.length; i++){
-        var guessedValue =  $("#" + myBucketValue[i] + "-bucket").data("guessed");
+    for (var i = 0; i < myBucketValue.length; i++) {
+        var guessedValue = $("#" + myBucketValue[i] + "-bucket").data("guessed");
         var correctValue = productData[currentProductIndex].costs[myBucketValue[i]];
         var textValue = productData[currentProductIndex].texts[myBucketValue[i]];
         console.log(guessedValue);
-             console.log(correctValue);
+        console.log(correctValue);
 
-          $("#"+myBucketValue[i]+"-bucket").flippy({
-        direction: "RIGHT",
-        duration: "500",
-        depth: 0,
-        verso: '<span class="lead headline">'+myBucketValue[i]+'</span><div class="diagramm"><div class="diagramm-default red"><div style="height:' + (100-guessedValue) + '%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">'+guessedValue+'%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:' + (100-correctValue)+ '%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">'+correctValue+'%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
-        recto: '<span class="lead headline">'+myBucketValue[i]+'</span>'+textValue+''
-    });
+        $("#" + myBucketValue[i] + "-bucket img").hide();
+            $("#" + myBucketValue[i] + "-bucket .guessed").hide();
 
-    $("#"+myBucketValue[i]+"-bucket").hover(function() {
-        $(this).flippyReverse();
-    });
+        var div = $('<div>').addClass('flipper');
 
-
-    setTimeout(function() {
-        $("#"+myBucketValue[i+1]+"-bucket").flippy({
+        div.flippy({
             direction: "RIGHT",
             duration: "500",
             depth: 0,
-            verso: '<span class="lead headline">Material</span><div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
-            recto: '<span class="lead headline">Material</span>Hier steht noch mehr Zeug'
+            verso: '<div class="diagramm"><div class="diagramm-default red"><div style="height:' + (100 - guessedValue) + '%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">' + guessedValue + '%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:' + (100 - correctValue) + '%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">' + correctValue + '%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+            recto: textValue
         });
-    }, 1500);
+
+
+        div.hover(function() {
+            $(this).flippyReverse();
+        });
+
+
+    /*    setTimeout(function() {
+           div.flippy({
+                direction: "RIGHT",
+                duration: "500",
+                depth: 0,
+                verso: '<div class="diagramm"><div class="diagramm-default red"><div style="height:90%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">10%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:70%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">33%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+                recto: 'Hier steht noch mehr Zeug'
+            });
+        }, 1500);*/
+
+        $("#" + myBucketValue[i] + "-bucket").append(div);
+
+
     }
 
 
