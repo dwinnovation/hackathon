@@ -97,9 +97,27 @@ h2 {
 	background:#fff;
 }
 
-#coinStack {
+#productInfoPanel {
 	height: 300px;
-	padding-top: 150px;
+}
+
+#productInfoPanel #coinStack {
+	position: absolute;
+	left: 0;
+	bottom: 50px;
+}
+
+#productInfoPanel .productName,.productPrice {
+	display: block;
+	text-align: right;
+}
+
+#productInfoPanel .productName {
+	font-size: 2em;
+}
+
+#productInfoPanel .productPrice {
+	font-size: 3em;
 }
 
 #coinStack img {
