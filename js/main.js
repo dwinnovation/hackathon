@@ -85,7 +85,6 @@ function dragCoin(coinItem, event) {
       // Drag Image
         var image = document.createElement('img');
         image.src = 'img/coin.png';
-        console.log(image);
     event.dataTransfer.setDragImage(image, 0, 0);
 }
 
