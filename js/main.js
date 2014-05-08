@@ -8,11 +8,6 @@ function showCoinModal(bucket) {
     $('#coinModal').data('bucket', bucket);
     // show dialog
     $('#coinModal').modal();
-     var audioElement = document.createElement('audio');
-        audioElement.setAttribute('src', 'sounds/cash_register_x.wav');
-
-     audioElement.play();
-
 }
 
 /**
@@ -63,7 +58,12 @@ function score() {
 
 function coinDropped(coinValue, bucket) {
 
-    var bucketValue = $(bucket).data('guessed');
+	// play sound on coin drop:
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'sounds/cash_register_x.wav');
+    audioElement.play();
+	
+	var bucketValue = $(bucket).data('guessed');
 
     if (typeof bucketValue === 'undefined' || bucketValue === '')
         bucketValue = 0;
@@ -86,10 +86,9 @@ function coinDropped(coinValue, bucket) {
 }
 
 function dragCoin(coinItem, event) {
-    // console.log("dragCoin");
-      // Drag Image
-        var image = document.createElement('img');
-        image.src = 'img/coin.png';
+    // Drag Image
+	var image = $('<img>').get()[0];
+    image.src = 'img/coin.png';
     event.dataTransfer.setDragImage(image, 0, 0);
 }
 
@@ -99,7 +98,6 @@ function dropCoin(bucketItem, event) {
         // show dialog for selecting coin value:
         showCoinModal(bucketItem);
     }
-
 
     // tell browser that we are handled this event:
     event.preventDefault();
