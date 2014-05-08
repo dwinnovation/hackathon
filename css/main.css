@@ -20,9 +20,12 @@ body {
     margin-right: auto;
 }
 
-#headerLogo {
-    left: 10px;
-    position: relative;
+#HeaderLogo img {
+	padding-right: 20px;
+}
+
+#HeaderLogo i {
+	vertical-align: middle;
 }
 
 .container{
@@ -200,6 +203,10 @@ li{
 
 .blue {
 	background:#88C100;
+}
+
+footer {
+	padding-top: 20px;
 }
 
 footer p {
