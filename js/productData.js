@@ -4,12 +4,12 @@
         imageUrl: "img/smartphone.png",
         price: "699,00 €",
         costs: {
-            wages: 12,
-            materials: 34,
-            logistics: 12,
-            taxes: 34,
+            wages: 1,
+            materials: 20,
+            logistics: 2,
+            taxes: 20,
             profit: 56,
-            marketing: 78
+            marketing: 1
         },
         texts:{
            wages : "Apple’s phone is a status symbol - not so much though for those assembling it. Suppliers in China like Foxconn are known for their bad working conditions, low wages and high suicide rates among their workers.",
