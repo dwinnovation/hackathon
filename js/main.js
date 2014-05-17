@@ -1,3 +1,8 @@
+var Constants = {
+    coinDropSound: 'sounds/cash_register_x.wav',
+    coinDragImage: 'img/coin.png',
+}
+
 /**
  * show modal dialog for coin values
  * @param bucket
@@ -60,7 +65,7 @@ function coinDropped(coinValue, bucket) {
 
 	// play sound on coin drop:
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'sounds/cash_register_x.wav');
+    audioElement.setAttribute('src', Constants.coinDropSound);
     audioElement.play();
 	
 	var bucketValue = $(bucket).data('guessed');
@@ -86,9 +91,9 @@ function coinDropped(coinValue, bucket) {
 }
 
 function dragCoin(coinItem, event) {
-    // Drag Image
-	var image = $('<img>').get()[0];
-    image.src = 'img/coin.png';
+    // set the drag image (does not work in IE)
+	var image = new Image();
+    image.src = Constants.coinDragImage;
     event.dataTransfer.setDragImage(image, 0, 0);
 }
 
@@ -101,6 +106,15 @@ function dropCoin(bucketItem, event) {
 
     // tell browser that we are handled this event:
     event.preventDefault();
+}
+
+/**
+ * preload an image to make sure it's in the browser cache when we need it:
+ * @param imageUrl
+ */
+function preloadImage(imageUrl) {
+	var img = new Image();
+	img.src = imageUrl;
 }
 
 /**
@@ -148,6 +162,9 @@ $(document).ready(function() {
     // initialize game with first product:
     initGame(productData[currentProductIndex]);
 
+    // preload images:
+    preloadImage(Constants.coinDragImage);
+    
     // init modal dialog:
 
     // onclick handlers for value panels:
@@ -265,9 +282,5 @@ $("#checkBtn").click(function() {
         }, 1500);*/
 
         $("#" + myBucketValue[i] + "-bucket").append(div);
-
-
     }
-
-
 });
