@@ -145,9 +145,6 @@ function initGame(productDescription) {
  */
 $(document).ready(function() {
 
-
-
-
     // initialize game with first product:
     initGame(productData[currentProductIndex]);
 
@@ -232,21 +229,30 @@ $("#checkBtn").click(function() {
         $("#" + myBucketValue[i] + "-bucket img").hide();
         $("#" + myBucketValue[i] + "-bucket .guessed").hide();
 
-        var div = $('<div>').addClass('flipper');
+        var div = $('<div>').addClass('flipper').addClass('row');
 
         div.flippy({
             direction: "RIGHT",
             duration: "500",
             depth: 0,
-            verso: '<div class="diagramm"><div class="diagramm-default red"><div style="height:' + (100 - guessedValue) + '%;"></div><!--- Hier die Differenz 100% - geratener Wert eintragen --><span id="diagramm-guess">' + guessedValue + '%</span><!-- Geratener Wert --></div><div class="diagramm-label-left">Guess</div><div class="diagramm-default blue"><div style="height:' + (100 - correctValue) + '%;"></div><!-- Hier die Differenz 100% - realer Wert eintragen --><span id="diagramm-correct">' + correctValue + '%</span><!-- Realer Wert --></div><div class="diagramm-label-right">Reality</div></div>',
+            verso: '<div class="col-md-6">'+
+                   '    <div class="diagramm left">'+
+                   '        <div class="bar guessed" style="height:' + guessedValue + '%;"></div>'+
+                   '        <span class="number number-guessed">' + guessedValue + '%</span>'+
+                   '    </div>'+
+                   '</div>'+
+                   '<div class="col-md-6">'+
+                   '    <div class="diagramm right">'+
+                   '        <div class="bar correct" style="height:' + correctValue + '%;"></div>'+
+                   '        <span class="number number-correct">' + correctValue + '%</span>'+
+                   '    </div>'+
+                   '</div>',
             recto: textValue
         });
-
 
         div.hover(function() {
             $(this).flippyReverse();
         });
-
 
     /*    setTimeout(function() {
            div.flippy({

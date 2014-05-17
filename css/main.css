@@ -99,8 +99,8 @@ li{
 	text-align: center;
 }
 
-#buckets img.bucket {
-	margin-left: 15px;
+#buckets .bucket {
+	text-align: center;
 }
 
 #buckets > div {
@@ -154,55 +154,55 @@ li{
 }
 
 .bucket img {
-	margin-left:16px;
 }
 
 .diagramm {
-	position:relative;
-	height:200px;
+	position: relative;
+	height: 200px;
+	background-color: #ccc;
 }
 
-.diagramm-default {
-	height: 170px;
-	width:46px;
-	float:left;
-	margin-left:25px;
-	color:white;
-    border-radius:4px;
+.diagramm.left {
+	margin-left: 10px;
 }
 
-.diagramm-default div {
-	width:46px; 
-	background:#ccc;
+.diagramm.right {
+	margin-right: 10px;
+}
+
+.diagramm div.bar {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 	border: 4px;
 }
 
-.diagramm-label-left {
-	position:absolute;
-	top:220px;
-	left:40px;
-
-}
-
-.diagramm-label-right {
-	position:absolute;
-	top:220px;
-	left:110px;
-}
-
-#diagramm-correct, #diagramm-guess {
-	padding-left:10px;
-	top:85px;
-	position:absolute;
-	z-index:999;
-}
-
-.red {
+.diagramm .bar.guessed {
 	background:#FF8A00;
 }
 
-.blue {
+.diagramm .bar.correct {
 	background:#88C100;
+}
+
+.diagramm .number {
+	display: block;
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+}
+
+.diagramm .number.number-guessed {
+	color: white;
+}
+
+.diagramm .number.number-correct {
+	color: white;
+}
+
+.flipper {
+	padding: 0 10px;
 }
 
 footer {
